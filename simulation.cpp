@@ -1,81 +1,103 @@
 #include <iostream>
-#include "vec2.cpp"
-#include "body.hpp"
+#include "simulation.hpp"
 #include <cmath>
 #include <fstream>
+#include <filesystem>
 
 
-Body::Body() {
-    mass = 0;
-    position = Vec2();
-    velocity = Vec2();
+Simulation::Simulation(int N, double G, double end_time, double write_period, double timestep) {
+    this->N = N;
+    this->G = G;
+    this->end_time = end_time;
+    this->write_period = write_period;
+    this->timestep = timestep;
+    this->steps = (int)(end_time / timestep);
+    this->write_steps = (int)(write_period / timestep);
+    this->steps = (int)(end_time / timestep);
+    this->bodies = new Body[N];
+    set_directory(&this->outfiles);
 }
 
 
-Body::Body(double new_mass, const Vec2& new_position, const Vec2& new_velocity) {
-    mass = new_mass;
-    position = new_position;
-    velocity = new_velocity;
+Simulation::~Simulation() {
+    for (int i = 0; i < N; i++) {
+        outfiles[i].close();
+    }
+    delete[] bodies;
+    delete[] outfiles;
 }
 
 
-inline void Body::set_mass(double new_mass) {
-    mass = new_mass;
+Body *Simulation::get_bodies() {
+    return bodies;
 }
 
 
-inline void Body::set_position(Vec2 &new_position) {
-    velocity = new_position;
+void Simulation::set_body(int body_index, const Body& body) {
+    bodies[body_index] = body;
 }
 
 
-inline void Body::set_velocity(Vec2 &new_velocity) {
-    velocity = new_velocity;
+void Simulation::update_positions() {
+    for (int i = 0; i < N; i++) {
+        bodies[i].add_position(bodies[i].get_velocity() * timestep);
+    }
 }
 
 
-inline double Body::get_mass() {
-    return mass;
+void Simulation::update_velocities() {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force(G, bodies[i], bodies[j]);
+            bodies[i].add_velocity(force * bodies[j].get_mass() * timestep);
+            bodies[j].add_velocity(-force * bodies[i].get_mass() * timestep);
+        }
+    }
 }
 
 
-inline Vec2 Body::get_position() {
-    return position;
+void Simulation::print_bodies() {
+    for (int i = 0; i < N; i++) {
+        std::cout << bodies[i] << "\n";
+    }
 }
 
 
-inline Vec2 Body::get_velocity() {
-    return velocity;
+
+void Simulation::set_directory(std::ofstream** outfiles_ptr) {
+    time_t timestamp;
+    time(&timestamp);
+    tm datetime = *localtime(&timestamp);
+    char output[50];
+    strftime(output, 50, "%Y-%b-%d_%H.%M.%S", &datetime);
+
+    std::string res = "results/";
+    std::string dir_name = res + output;
+    std::filesystem::create_directory(dir_name);
+    *outfiles_ptr = new std::ofstream[N];
+    for (int i = 0; i < N; i++) {
+        std::string output_name = dir_name + "/body" + std::to_string(i) + ".txt";
+        (*outfiles_ptr)[i].open(output_name, std::ios_base::out);
+    }
 }
 
 
-inline void Body::add_position(const Vec2& addition_position) {
-    position += addition_position;
+void Simulation::Euler() {
+    update_velocities();
+    update_positions();
 }
 
 
-inline void Body::add_velocity(const Vec2& addition_velocity) {
-    velocity += addition_velocity;
-}
-
-
-inline Vec2 get_distance(Body& body1, Body& body2) {
-    return body2.get_position() - body1.get_position();
-}
-
-
-inline Vec2 get_force(double G, Body& body1, Body& body2) {
-    Vec2 distance = get_distance(body1, body2);
-    return distance.normalized() * G / distance.get_norm_squared();
-}
-
-
-std::ostream& operator<<(std::ostream& out, const Body& body) {
-    out << "Mass: " << body.mass << " Position: " << body.position << "Velocity: " << body.velocity;
-    return out;
-}
-
-
-inline void Body::write_position(std::ofstream& outfile) {
-    outfile << position.get_x() << " " << position.get_y() << "\n";
+void Simulation::simulate() {
+    for (int step = 0; step < steps; step ++) {
+        Euler();
+        if (step % write_steps == 0) {
+            for (int i = 0; i < N; i++) {
+                bodies[i].write_position(outfiles[i]);
+            }
+        }
+        if (step * 100 % steps == 0) {
+            std::cout << "Calculation: " << step * 100 / steps << "%\r";
+        }
+    }
 }
