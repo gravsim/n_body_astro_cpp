@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iomanip>
 #include "yaml-cpp/yaml.h"
-#include "simulation.cpp"
+#include "src/simulation.hpp"
 
 
 
