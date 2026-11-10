@@ -1,18 +1,19 @@
-cmake_minimum_required(VERSION 3.1)
-project(YamlExample)
 
-add_subdirectory(third-party/yaml-cpp) # This is one way of referencing another
-                                       # CMake project
+cmake_minimum_required(VERSION 3.20)
+project(MyProject)
 
-add_executable(
-    yaml-example
-    main.cpp
+set(CMAKE_CXX_STANDARD 17)
+
+include(FetchContent)
+
+FetchContent_Declare(
+        yaml-cpp
+        GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+        GIT_TAG 0.8.0
 )
 
-configure_file(config.yaml config.yaml COPYONLY)
-target_link_libraries(
-    yaml-example  
-    PRIVATE
-    yaml-cpp  # This is the "target" exposed by 
-              # yaml-cpp's CMakeLists.txt file
-)
+FetchContent_MakeAvailable(yaml-cpp)
+
+add_executable(MyProject main.cpp)
+
+target_link_libraries(MyProject PRIVATE yaml-cpp::yaml-cpp)
