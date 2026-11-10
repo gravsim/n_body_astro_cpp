@@ -1,19 +1,17 @@
-
 cmake_minimum_required(VERSION 3.20)
-project(MyProject)
+
+project(n_body_astro_cpp LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include(FetchContent)
+find_package(yaml-cpp CONFIG REQUIRED)
 
-FetchContent_Declare(
-        yaml-cpp
-        GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
-        GIT_TAG 0.8.0
+add_executable(n_body_astro_cpp
+        main.cpp
+        src/body.cpp
+        src/vec2.cpp
+        src/simulation.cpp
 )
 
-FetchContent_MakeAvailable(yaml-cpp)
-
-add_executable(MyProject main.cpp)
-
-target_link_libraries(MyProject PRIVATE yaml-cpp::yaml-cpp)
+target_link_libraries(n_body_astro_cpp PRIVATE yaml-cpp::yaml-cpp)
