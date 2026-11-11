@@ -4,8 +4,8 @@ case_settings:
 
   gravitational_constant: 6.67e-11
   enable_3d: false
-  end_time: 50_000_000
-  write_period: 10_000
+  end_time: 50000000
+  write_period: 10000
   custom_time_step: 5
   draw_every: 1
   bodies_number: 30
