@@ -1,0 +1,53 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 10_000_000
+  write_period: 5000
+  custom_time_step: 20
+  draw_every: 1
+  start_date: 2020-01-01 00:00
+  use_gravity_parameters: true
+  location: 500
+  config_name: earth_n_moon
+
+  calculate_barycenter: True
+  barycenter_reference_frame: True
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Earth
+    russian_name: Земля
+    id: 399
+    mass: 5.97219e+24
+    radius: 6.3781e+06
+    gravity_parameter: 398600435507000.0
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    velocity:
+    - 0.0
+    - 0.0
+    - 0.0
+  body1:
+    english_name: Moon
+    russian_name: Луна
+    id: 301
+    mass: 7.349e+22
+    radius: 1.738e+06
+    gravity_parameter: 4902800118000.0
+    position:
+    - 390185639.3400028
+    - -98340760.34400758
+    - -34449661.142529085
+    velocity:
+    - 248.72771775058138
+    - 935.7371983658963
+    - -35.04129000950317

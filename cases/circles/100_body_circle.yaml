@@ -1,0 +1,1322 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  enable_3d: false
+  end_time: 5_000
+  write_period: 1
+  custom_time_step: 1
+  draw_every: 1
+  bodies_number: 100
+  circle_radius: 1
+  body_mass: 1
+  body_radius: 1
+  calculate_barycenter: false
+  barycenter_reference_frame: false
+  calculate_energy: false
+  calculate_da_a_ratio: false
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Body 1
+    russian_name: Тело 1
+    mass: 1
+    radius: 1
+    position:
+    - 1.0
+    - 0.0
+    - 0.0
+    velocity:
+    - -0.0
+    - 7.08663054886876e-05
+    - 0.0
+  body1:
+    english_name: Body 2
+    russian_name: Тело 2
+    mass: 1
+    radius: 1
+    position:
+    - 0.9980267284282716
+    - 0.06279051952931337
+    - 0.0
+    velocity:
+    - -4.449732138757726e-06
+    - 7.072646702267336e-05
+    - 0.0
+  body2:
+    english_name: Body 3
+    russian_name: Тело 3
+    mass: 1
+    radius: 1
+    position:
+    - 0.9921147013144779
+    - 0.12533323356430426
+    - 0.0
+    velocity:
+    - -8.88190321765302e-06
+    - 7.030750350316985e-05
+    - 0.0
+  body3:
+    english_name: Body 4
+    russian_name: Тело 4
+    mass: 1
+    radius: 1
+    position:
+    - 0.9822872507286887
+    - 0.1873813145857246
+    - 0.0
+    velocity:
+    - -1.3279021482303833e-05
+    - 6.961106838778233e-05
+    - 0.0
+  body4:
+    english_name: Body 5
+    russian_name: Тело 5
+    mass: 1
+    radius: 1
+    position:
+    - 0.9685831611286311
+    - 0.2486898871648548
+    - 0.0
+    velocity:
+    - -1.7623733515771852e-05
+    - 6.86399101877403e-05
+    - 0.0
+  body5:
+    english_name: Body 6
+    russian_name: Тело 6
+    mass: 1
+    radius: 1
+    position:
+    - 0.9510565162951535
+    - 0.3090169943749474
+    - 0.0
+    velocity:
+    - -2.189889272457108e-05
+    - 6.739786162077935e-05
+    - 0.0
+  body6:
+    english_name: Body 7
+    russian_name: Тело 7
+    mass: 1
+    radius: 1
+    position:
+    - 0.9297764858882515
+    - 0.3681245526846779
+    - 0.0
+    velocity:
+    - -2.6087627008438862e-05
+    - 6.588982448515527e-05
+    - 0.0
+  body7:
+    english_name: Body 8
+    russian_name: Тело 8
+    mass: 1
+    radius: 1
+    position:
+    - 0.9048270524660196
+    - 0.42577929156507266
+    - 0.0
+    velocity:
+    - -3.017340534680743e-05
+    - 6.41217503144857e-05
+    - 0.0
+  body8:
+    english_name: Body 9
+    russian_name: Тело 9
+    mass: 1
+    radius: 1
+    position:
+    - 0.8763066800438636
+    - 0.4817536741017153
+    - 0.0
+    velocity:
+    - -3.4140103039189806e-05
+    - 6.210061688976607e-05
+    - 0.0
+  body9:
+    english_name: Body 10
+    russian_name: Тело 10
+    mass: 1
+    radius: 1
+    position:
+    - 0.8443279255020151
+    - 0.5358267949789967
+    - 0.0
+    velocity:
+    - -3.797206534200596e-05
+    - 5.983440070125567e-05
+    - 0.0
+  body10:
+    english_name: Body 11
+    russian_name: Тело 11
+    mass: 1
+    radius: 1
+    position:
+    - 0.8090169943749475
+    - 0.5877852522924731
+    - 0.0
+    velocity:
+    - -4.165416925070372e-05
+    - 5.733204546891489e-05
+    - 0.0
+  body11:
+    english_name: Body 12
+    russian_name: Тело 12
+    mass: 1
+    radius: 1
+    position:
+    - 0.7705132427757893
+    - 0.6374239897486896
+    - 0.0
+    velocity:
+    - -4.517188318334872e-05
+    - 5.46034268456284e-05
+    - 0.0
+  body12:
+    english_name: Body 13
+    russian_name: Тело 13
+    mass: 1
+    radius: 1
+    position:
+    - 0.7289686274214116
+    - 0.6845471059286886
+    - 0.0
+    velocity:
+    - -4.851132433013944e-05
+    - 5.165931344251505e-05
+    - 0.0
+  body13:
+    english_name: Body 14
+    russian_name: Тело 14
+    mass: 1
+    radius: 1
+    position:
+    - 0.6845471059286886
+    - 0.7289686274214116
+    - 0.0
+    velocity:
+    - -5.165931344251505e-05
+    - 4.851132433013944e-05
+    - 0.0
+  body14:
+    english_name: Body 15
+    russian_name: Тело 15
+    mass: 1
+    radius: 1
+    position:
+    - 0.6374239897486897
+    - 0.7705132427757893
+    - 0.0
+    velocity:
+    - -5.46034268456284e-05
+    - 4.5171883183348725e-05
+    - 0.0
+  body15:
+    english_name: Body 16
+    russian_name: Тело 16
+    mass: 1
+    radius: 1
+    position:
+    - 0.5877852522924732
+    - 0.8090169943749473
+    - 0.0
+    velocity:
+    - -5.733204546891488e-05
+    - 4.165416925070373e-05
+    - 0.0
+  body16:
+    english_name: Body 17
+    russian_name: Тело 17
+    mass: 1
+    radius: 1
+    position:
+    - 0.5358267949789965
+    - 0.8443279255020151
+    - 0.0
+    velocity:
+    - -5.983440070125567e-05
+    - 3.797206534200595e-05
+    - 0.0
+  body17:
+    english_name: Body 18
+    russian_name: Тело 18
+    mass: 1
+    radius: 1
+    position:
+    - 0.48175367410171516
+    - 0.8763066800438637
+    - 0.0
+    velocity:
+    - -6.210061688976607e-05
+    - 3.41401030391898e-05
+    - 0.0
+  body18:
+    english_name: Body 19
+    russian_name: Тело 19
+    mass: 1
+    radius: 1
+    position:
+    - 0.42577929156507266
+    - 0.9048270524660196
+    - 0.0
+    velocity:
+    - -6.41217503144857e-05
+    - 3.017340534680743e-05
+    - 0.0
+  body19:
+    english_name: Body 20
+    russian_name: Тело 20
+    mass: 1
+    radius: 1
+    position:
+    - 0.3681245526846781
+    - 0.9297764858882513
+    - 0.0
+    velocity:
+    - -6.588982448515526e-05
+    - 2.6087627008438872e-05
+    - 0.0
+  body20:
+    english_name: Body 21
+    russian_name: Тело 21
+    mass: 1
+    radius: 1
+    position:
+    - 0.30901699437494745
+    - 0.9510565162951535
+    - 0.0
+    velocity:
+    - -6.739786162077935e-05
+    - 2.1898892724571085e-05
+    - 0.0
+  body21:
+    english_name: Body 22
+    russian_name: Тело 22
+    mass: 1
+    radius: 1
+    position:
+    - 0.24868988716485474
+    - 0.9685831611286311
+    - 0.0
+    velocity:
+    - -6.86399101877403e-05
+    - 1.7623733515771845e-05
+    - 0.0
+  body22:
+    english_name: Body 23
+    russian_name: Тело 23
+    mass: 1
+    radius: 1
+    position:
+    - 0.18738131458572474
+    - 0.9822872507286886
+    - 0.0
+    velocity:
+    - -6.961106838778233e-05
+    - 1.3279021482303843e-05
+    - 0.0
+  body23:
+    english_name: Body 24
+    russian_name: Тело 24
+    mass: 1
+    radius: 1
+    position:
+    - 0.12533323356430448
+    - 0.9921147013144778
+    - 0.0
+    velocity:
+    - -7.030750350316984e-05
+    - 8.881903217653036e-06
+    - 0.0
+  body24:
+    english_name: Body 25
+    russian_name: Тело 25
+    mass: 1
+    radius: 1
+    position:
+    - 0.06279051952931353
+    - 0.9980267284282716
+    - 0.0
+    velocity:
+    - -7.072646702267336e-05
+    - 4.449732138757737e-06
+    - 0.0
+  body25:
+    english_name: Body 26
+    russian_name: Тело 26
+    mass: 1
+    radius: 1
+    position:
+    - 6.123233995736766e-17
+    - 1.0
+    - 0.0
+    velocity:
+    - -7.08663054886876e-05
+    - 4.339309709205989e-21
+    - 0.0
+  body26:
+    english_name: Body 27
+    russian_name: Тело 27
+    mass: 1
+    radius: 1
+    position:
+    - -0.0627905195293134
+    - 0.9980267284282716
+    - 0.0
+    velocity:
+    - -7.072646702267336e-05
+    - -4.449732138757729e-06
+    - 0.0
+  body27:
+    english_name: Body 28
+    russian_name: Тело 28
+    mass: 1
+    radius: 1
+    position:
+    - -0.12533323356430415
+    - 0.9921147013144779
+    - 0.0
+    velocity:
+    - -7.030750350316985e-05
+    - -8.881903217653012e-06
+    - 0.0
+  body28:
+    english_name: Body 29
+    russian_name: Тело 29
+    mass: 1
+    radius: 1
+    position:
+    - -0.1873813145857246
+    - 0.9822872507286887
+    - 0.0
+    velocity:
+    - -6.961106838778233e-05
+    - -1.3279021482303833e-05
+    - 0.0
+  body29:
+    english_name: Body 30
+    russian_name: Тело 30
+    mass: 1
+    radius: 1
+    position:
+    - -0.24868988716485485
+    - 0.9685831611286311
+    - 0.0
+    velocity:
+    - -6.86399101877403e-05
+    - -1.7623733515771855e-05
+    - 0.0
+  body30:
+    english_name: Body 31
+    russian_name: Тело 31
+    mass: 1
+    radius: 1
+    position:
+    - -0.3090169943749471
+    - 0.9510565162951536
+    - 0.0
+    velocity:
+    - -6.739786162077935e-05
+    - -2.189889272457106e-05
+    - 0.0
+  body31:
+    english_name: Body 32
+    russian_name: Тело 32
+    mass: 1
+    radius: 1
+    position:
+    - -0.36812455268467775
+    - 0.9297764858882515
+    - 0.0
+    velocity:
+    - -6.588982448515527e-05
+    - -2.6087627008438848e-05
+    - 0.0
+  body32:
+    english_name: Body 33
+    russian_name: Тело 33
+    mass: 1
+    radius: 1
+    position:
+    - -0.4257792915650727
+    - 0.9048270524660195
+    - 0.0
+    velocity:
+    - -6.41217503144857e-05
+    - -3.0173405346807434e-05
+    - 0.0
+  body33:
+    english_name: Body 34
+    russian_name: Тело 34
+    mass: 1
+    radius: 1
+    position:
+    - -0.48175367410171543
+    - 0.8763066800438635
+    - 0.0
+    velocity:
+    - -6.210061688976605e-05
+    - -3.414010303918982e-05
+    - 0.0
+  body34:
+    english_name: Body 35
+    russian_name: Тело 35
+    mass: 1
+    radius: 1
+    position:
+    - -0.5358267949789969
+    - 0.844327925502015
+    - 0.0
+    velocity:
+    - -5.983440070125566e-05
+    - -3.797206534200598e-05
+    - 0.0
+  body35:
+    english_name: Body 36
+    russian_name: Тело 36
+    mass: 1
+    radius: 1
+    position:
+    - -0.587785252292473
+    - 0.8090169943749475
+    - 0.0
+    velocity:
+    - -5.733204546891489e-05
+    - -4.165416925070371e-05
+    - 0.0
+  body36:
+    english_name: Body 37
+    russian_name: Тело 37
+    mass: 1
+    radius: 1
+    position:
+    - -0.6374239897486897
+    - 0.7705132427757893
+    - 0.0
+    velocity:
+    - -5.46034268456284e-05
+    - -4.5171883183348725e-05
+    - 0.0
+  body37:
+    english_name: Body 38
+    russian_name: Тело 38
+    mass: 1
+    radius: 1
+    position:
+    - -0.6845471059286887
+    - 0.7289686274214114
+    - 0.0
+    velocity:
+    - -5.165931344251504e-05
+    - -4.851132433013945e-05
+    - 0.0
+  body38:
+    english_name: Body 39
+    russian_name: Тело 39
+    mass: 1
+    radius: 1
+    position:
+    - -0.7289686274214113
+    - 0.6845471059286888
+    - 0.0
+    velocity:
+    - -4.8511324330139456e-05
+    - -5.1659313442515034e-05
+    - 0.0
+  body39:
+    english_name: Body 40
+    russian_name: Тело 40
+    mass: 1
+    radius: 1
+    position:
+    - -0.7705132427757891
+    - 0.6374239897486899
+    - 0.0
+    velocity:
+    - -4.517188318334873e-05
+    - -5.4603426845628395e-05
+    - 0.0
+  body40:
+    english_name: Body 41
+    russian_name: Тело 41
+    mass: 1
+    radius: 1
+    position:
+    - -0.8090169943749473
+    - 0.5877852522924732
+    - 0.0
+    velocity:
+    - -4.165416925070373e-05
+    - -5.733204546891488e-05
+    - 0.0
+  body41:
+    english_name: Body 42
+    russian_name: Тело 42
+    mass: 1
+    radius: 1
+    position:
+    - -0.8443279255020149
+    - 0.535826794978997
+    - 0.0
+    velocity:
+    - -3.7972065342005984e-05
+    - -5.9834400701255654e-05
+    - 0.0
+  body42:
+    english_name: Body 43
+    russian_name: Тело 43
+    mass: 1
+    radius: 1
+    position:
+    - -0.8763066800438636
+    - 0.4817536741017152
+    - 0.0
+    velocity:
+    - -3.41401030391898e-05
+    - -6.210061688976607e-05
+    - 0.0
+  body43:
+    english_name: Body 44
+    russian_name: Тело 44
+    mass: 1
+    radius: 1
+    position:
+    - -0.9048270524660194
+    - 0.4257792915650729
+    - 0.0
+    velocity:
+    - -3.0173405346807444e-05
+    - -6.412175031448569e-05
+    - 0.0
+  body44:
+    english_name: Body 45
+    russian_name: Тело 45
+    mass: 1
+    radius: 1
+    position:
+    - -0.9297764858882513
+    - 0.36812455268467814
+    - 0.0
+    velocity:
+    - -2.6087627008438875e-05
+    - -6.588982448515526e-05
+    - 0.0
+  body45:
+    english_name: Body 46
+    russian_name: Тело 46
+    mass: 1
+    radius: 1
+    position:
+    - -0.9510565162951535
+    - 0.3090169943749475
+    - 0.0
+    velocity:
+    - -2.1898892724571088e-05
+    - -6.739786162077935e-05
+    - 0.0
+  body46:
+    english_name: Body 47
+    russian_name: Тело 47
+    mass: 1
+    radius: 1
+    position:
+    - -0.968583161128631
+    - 0.24868988716485524
+    - 0.0
+    velocity:
+    - -1.7623733515771883e-05
+    - -6.863991018774029e-05
+    - 0.0
+  body47:
+    english_name: Body 48
+    russian_name: Тело 48
+    mass: 1
+    radius: 1
+    position:
+    - -0.9822872507286887
+    - 0.18738131458572457
+    - 0.0
+    velocity:
+    - -1.3279021482303832e-05
+    - -6.961106838778233e-05
+    - 0.0
+  body48:
+    english_name: Body 49
+    russian_name: Тело 49
+    mass: 1
+    radius: 1
+    position:
+    - -0.9921147013144778
+    - 0.12533323356430454
+    - 0.0
+    velocity:
+    - -8.88190321765304e-06
+    - -7.030750350316984e-05
+    - 0.0
+  body49:
+    english_name: Body 50
+    russian_name: Тело 50
+    mass: 1
+    radius: 1
+    position:
+    - -0.9980267284282716
+    - 0.06279051952931358
+    - 0.0
+    velocity:
+    - -4.4497321387577415e-06
+    - -7.072646702267336e-05
+    - 0.0
+  body50:
+    english_name: Body 51
+    russian_name: Тело 51
+    mass: 1
+    radius: 1
+    position:
+    - -1.0
+    - 1.2246467991473532e-16
+    - 0.0
+    velocity:
+    - -8.678619418411978e-21
+    - -7.08663054886876e-05
+    - 0.0
+  body51:
+    english_name: Body 52
+    russian_name: Тело 52
+    mass: 1
+    radius: 1
+    position:
+    - -0.9980267284282716
+    - -0.06279051952931335
+    - 0.0
+    velocity:
+    - 4.449732138757725e-06
+    - -7.072646702267336e-05
+    - 0.0
+  body52:
+    english_name: Body 53
+    russian_name: Тело 53
+    mass: 1
+    radius: 1
+    position:
+    - -0.9921147013144779
+    - -0.12533323356430429
+    - 0.0
+    velocity:
+    - 8.881903217653022e-06
+    - -7.030750350316985e-05
+    - 0.0
+  body53:
+    english_name: Body 54
+    russian_name: Тело 54
+    mass: 1
+    radius: 1
+    position:
+    - -0.9822872507286886
+    - -0.18738131458572477
+    - 0.0
+    velocity:
+    - 1.3279021482303845e-05
+    - -6.961106838778233e-05
+    - 0.0
+  body54:
+    english_name: Body 55
+    russian_name: Тело 55
+    mass: 1
+    radius: 1
+    position:
+    - -0.9685831611286312
+    - -0.24868988716485457
+    - 0.0
+    velocity:
+    - 1.7623733515771835e-05
+    - -6.863991018774031e-05
+    - 0.0
+  body55:
+    english_name: Body 56
+    russian_name: Тело 56
+    mass: 1
+    radius: 1
+    position:
+    - -0.9510565162951536
+    - -0.3090169943749473
+    - 0.0
+    velocity:
+    - 2.1898892724571075e-05
+    - -6.739786162077935e-05
+    - 0.0
+  body56:
+    english_name: Body 57
+    russian_name: Тело 57
+    mass: 1
+    radius: 1
+    position:
+    - -0.9297764858882515
+    - -0.3681245526846779
+    - 0.0
+    velocity:
+    - 2.6087627008438862e-05
+    - -6.588982448515527e-05
+    - 0.0
+  body57:
+    english_name: Body 58
+    russian_name: Тело 58
+    mass: 1
+    radius: 1
+    position:
+    - -0.9048270524660197
+    - -0.42577929156507227
+    - 0.0
+    velocity:
+    - 3.01734053468074e-05
+    - -6.412175031448572e-05
+    - 0.0
+  body58:
+    english_name: Body 59
+    russian_name: Тело 59
+    mass: 1
+    radius: 1
+    position:
+    - -0.8763066800438636
+    - -0.4817536741017154
+    - 0.0
+    velocity:
+    - 3.414010303918981e-05
+    - -6.210061688976607e-05
+    - 0.0
+  body59:
+    english_name: Body 60
+    russian_name: Тело 60
+    mass: 1
+    radius: 1
+    position:
+    - -0.8443279255020152
+    - -0.5358267949789964
+    - 0.0
+    velocity:
+    - 3.7972065342005944e-05
+    - -5.983440070125568e-05
+    - 0.0
+  body60:
+    english_name: Body 61
+    russian_name: Тело 61
+    mass: 1
+    radius: 1
+    position:
+    - -0.8090169943749478
+    - -0.5877852522924727
+    - 0.0
+    velocity:
+    - 4.165416925070369e-05
+    - -5.7332045468914914e-05
+    - 0.0
+  body61:
+    english_name: Body 62
+    russian_name: Тело 62
+    mass: 1
+    radius: 1
+    position:
+    - -0.7705132427757893
+    - -0.6374239897486896
+    - 0.0
+    velocity:
+    - 4.517188318334872e-05
+    - -5.46034268456284e-05
+    - 0.0
+  body62:
+    english_name: Body 63
+    russian_name: Тело 63
+    mass: 1
+    radius: 1
+    position:
+    - -0.7289686274214119
+    - -0.6845471059286884
+    - 0.0
+    velocity:
+    - 4.851132433013942e-05
+    - -5.165931344251507e-05
+    - 0.0
+  body63:
+    english_name: Body 64
+    russian_name: Тело 64
+    mass: 1
+    radius: 1
+    position:
+    - -0.6845471059286886
+    - -0.7289686274214116
+    - 0.0
+    velocity:
+    - 5.165931344251505e-05
+    - -4.851132433013944e-05
+    - 0.0
+  body64:
+    english_name: Body 65
+    russian_name: Тело 65
+    mass: 1
+    radius: 1
+    position:
+    - -0.6374239897486895
+    - -0.7705132427757894
+    - 0.0
+    velocity:
+    - 5.460342684562841e-05
+    - -4.5171883183348705e-05
+    - 0.0
+  body65:
+    english_name: Body 66
+    russian_name: Тело 66
+    mass: 1
+    radius: 1
+    position:
+    - -0.5877852522924732
+    - -0.8090169943749473
+    - 0.0
+    velocity:
+    - 5.733204546891488e-05
+    - -4.165416925070373e-05
+    - 0.0
+  body66:
+    english_name: Body 67
+    russian_name: Тело 67
+    mass: 1
+    radius: 1
+    position:
+    - -0.5358267949789963
+    - -0.8443279255020153
+    - 0.0
+    velocity:
+    - 5.983440070125569e-05
+    - -3.797206534200594e-05
+    - 0.0
+  body67:
+    english_name: Body 68
+    russian_name: Тело 68
+    mass: 1
+    radius: 1
+    position:
+    - -0.48175367410171527
+    - -0.8763066800438636
+    - 0.0
+    velocity:
+    - 6.210061688976607e-05
+    - -3.4140103039189806e-05
+    - 0.0
+  body68:
+    english_name: Body 69
+    russian_name: Тело 69
+    mass: 1
+    radius: 1
+    position:
+    - -0.42577929156507216
+    - -0.9048270524660198
+    - 0.0
+    velocity:
+    - 6.412175031448573e-05
+    - -3.0173405346807393e-05
+    - 0.0
+  body69:
+    english_name: Body 70
+    russian_name: Тело 70
+    mass: 1
+    radius: 1
+    position:
+    - -0.3681245526846778
+    - -0.9297764858882515
+    - 0.0
+    velocity:
+    - 6.588982448515527e-05
+    - -2.608762700843885e-05
+    - 0.0
+  body70:
+    english_name: Body 71
+    russian_name: Тело 71
+    mass: 1
+    radius: 1
+    position:
+    - -0.30901699437494756
+    - -0.9510565162951535
+    - 0.0
+    velocity:
+    - 6.739786162077935e-05
+    - -2.189889272457109e-05
+    - 0.0
+  body71:
+    english_name: Body 72
+    russian_name: Тело 72
+    mass: 1
+    radius: 1
+    position:
+    - -0.24868988716485443
+    - -0.9685831611286312
+    - 0.0
+    velocity:
+    - 6.863991018774031e-05
+    - -1.7623733515771825e-05
+    - 0.0
+  body72:
+    english_name: Body 73
+    russian_name: Тело 73
+    mass: 1
+    radius: 1
+    position:
+    - -0.18738131458572463
+    - -0.9822872507286887
+    - 0.0
+    velocity:
+    - 6.961106838778233e-05
+    - -1.3279021482303837e-05
+    - 0.0
+  body73:
+    english_name: Body 74
+    russian_name: Тело 74
+    mass: 1
+    radius: 1
+    position:
+    - -0.1253332335643046
+    - -0.9921147013144778
+    - 0.0
+    velocity:
+    - 7.030750350316984e-05
+    - -8.881903217653044e-06
+    - 0.0
+  body74:
+    english_name: Body 75
+    russian_name: Тело 75
+    mass: 1
+    radius: 1
+    position:
+    - -0.06279051952931321
+    - -0.9980267284282716
+    - 0.0
+    velocity:
+    - 7.072646702267336e-05
+    - -4.4497321387577144e-06
+    - 0.0
+  body75:
+    english_name: Body 76
+    russian_name: Тело 76
+    mass: 1
+    radius: 1
+    position:
+    - -1.8369701987210297e-16
+    - -1.0
+    - 0.0
+    velocity:
+    - 7.08663054886876e-05
+    - -1.3017929127617967e-20
+    - 0.0
+  body76:
+    english_name: Body 77
+    russian_name: Тело 77
+    mass: 1
+    radius: 1
+    position:
+    - 0.06279051952931283
+    - -0.9980267284282716
+    - 0.0
+    velocity:
+    - 7.072646702267336e-05
+    - 4.449732138757688e-06
+    - 0.0
+  body77:
+    english_name: Body 78
+    russian_name: Тело 78
+    mass: 1
+    radius: 1
+    position:
+    - 0.12533323356430423
+    - -0.9921147013144779
+    - 0.0
+    velocity:
+    - 7.030750350316985e-05
+    - 8.881903217653019e-06
+    - 0.0
+  body78:
+    english_name: Body 79
+    russian_name: Тело 79
+    mass: 1
+    radius: 1
+    position:
+    - 0.18738131458572427
+    - -0.9822872507286887
+    - 0.0
+    velocity:
+    - 6.961106838778233e-05
+    - 1.3279021482303811e-05
+    - 0.0
+  body79:
+    english_name: Body 80
+    russian_name: Тело 80
+    mass: 1
+    radius: 1
+    position:
+    - 0.24868988716485493
+    - -0.9685831611286311
+    - 0.0
+    velocity:
+    - 6.86399101877403e-05
+    - 1.762373351577186e-05
+    - 0.0
+  body80:
+    english_name: Body 81
+    russian_name: Тело 81
+    mass: 1
+    radius: 1
+    position:
+    - 0.30901699437494723
+    - -0.9510565162951536
+    - 0.0
+    velocity:
+    - 6.739786162077935e-05
+    - 2.189889272457107e-05
+    - 0.0
+  body81:
+    english_name: Body 82
+    russian_name: Тело 82
+    mass: 1
+    radius: 1
+    position:
+    - 0.3681245526846774
+    - -0.9297764858882516
+    - 0.0
+    velocity:
+    - 6.588982448515527e-05
+    - 2.6087627008438825e-05
+    - 0.0
+  body82:
+    english_name: Body 83
+    russian_name: Тело 83
+    mass: 1
+    radius: 1
+    position:
+    - 0.4257792915650718
+    - -0.9048270524660199
+    - 0.0
+    velocity:
+    - 6.412175031448573e-05
+    - 3.017340534680737e-05
+    - 0.0
+  body83:
+    english_name: Body 84
+    russian_name: Тело 84
+    mass: 1
+    radius: 1
+    position:
+    - 0.4817536741017157
+    - -0.8763066800438634
+    - 0.0
+    velocity:
+    - 6.210061688976604e-05
+    - 3.414010303918983e-05
+    - 0.0
+  body84:
+    english_name: Body 85
+    russian_name: Тело 85
+    mass: 1
+    radius: 1
+    position:
+    - 0.5358267949789968
+    - -0.844327925502015
+    - 0.0
+    velocity:
+    - 5.983440070125566e-05
+    - 3.7972065342005964e-05
+    - 0.0
+  body85:
+    english_name: Body 86
+    russian_name: Тело 86
+    mass: 1
+    radius: 1
+    position:
+    - 0.5877852522924729
+    - -0.8090169943749476
+    - 0.0
+    velocity:
+    - 5.7332045468914894e-05
+    - 4.16541692507037e-05
+    - 0.0
+  body86:
+    english_name: Body 87
+    russian_name: Тело 87
+    mass: 1
+    radius: 1
+    position:
+    - 0.6374239897486893
+    - -0.7705132427757896
+    - 0.0
+    velocity:
+    - 5.460342684562842e-05
+    - 4.517188318334869e-05
+    - 0.0
+  body87:
+    english_name: Body 88
+    russian_name: Тело 88
+    mass: 1
+    radius: 1
+    position:
+    - 0.684547105928688
+    - -0.7289686274214121
+    - 0.0
+    velocity:
+    - 5.165931344251509e-05
+    - 4.8511324330139395e-05
+    - 0.0
+  body88:
+    english_name: Body 89
+    russian_name: Тело 89
+    mass: 1
+    radius: 1
+    position:
+    - 0.7289686274214112
+    - -0.684547105928689
+    - 0.0
+    velocity:
+    - 4.851132433013946e-05
+    - 5.165931344251503e-05
+    - 0.0
+  body89:
+    english_name: Body 90
+    russian_name: Тело 90
+    mass: 1
+    radius: 1
+    position:
+    - 0.7705132427757894
+    - -0.6374239897486896
+    - 0.0
+    velocity:
+    - 4.517188318334872e-05
+    - 5.460342684562841e-05
+    - 0.0
+  body90:
+    english_name: Body 91
+    russian_name: Тело 91
+    mass: 1
+    radius: 1
+    position:
+    - 0.8090169943749473
+    - -0.5877852522924734
+    - 0.0
+    velocity:
+    - 4.1654169250703735e-05
+    - 5.733204546891488e-05
+    - 0.0
+  body91:
+    english_name: Body 92
+    russian_name: Тело 92
+    mass: 1
+    radius: 1
+    position:
+    - 0.8443279255020147
+    - -0.5358267949789971
+    - 0.0
+    velocity:
+    - 3.797206534200599e-05
+    - 5.983440070125565e-05
+    - 0.0
+  body92:
+    english_name: Body 93
+    russian_name: Тело 93
+    mass: 1
+    radius: 1
+    position:
+    - 0.8763066800438631
+    - -0.4817536741017161
+    - 0.0
+    velocity:
+    - 3.414010303918987e-05
+    - 6.210061688976603e-05
+    - 0.0
+  body93:
+    english_name: Body 94
+    russian_name: Тело 94
+    mass: 1
+    radius: 1
+    position:
+    - 0.9048270524660194
+    - -0.425779291565073
+    - 0.0
+    velocity:
+    - 3.0173405346807454e-05
+    - 6.412175031448569e-05
+    - 0.0
+  body94:
+    english_name: Body 95
+    russian_name: Тело 95
+    mass: 1
+    radius: 1
+    position:
+    - 0.9297764858882515
+    - -0.36812455268467786
+    - 0.0
+    velocity:
+    - 2.6087627008438855e-05
+    - 6.588982448515527e-05
+    - 0.0
+  body95:
+    english_name: Body 96
+    russian_name: Тело 96
+    mass: 1
+    radius: 1
+    position:
+    - 0.9510565162951535
+    - -0.3090169943749477
+    - 0.0
+    velocity:
+    - 2.1898892724571102e-05
+    - 6.739786162077935e-05
+    - 0.0
+  body96:
+    english_name: Body 97
+    russian_name: Тело 97
+    mass: 1
+    radius: 1
+    position:
+    - 0.968583161128631
+    - -0.24868988716485535
+    - 0.0
+    velocity:
+    - 1.762373351577189e-05
+    - 6.863991018774029e-05
+    - 0.0
+  body97:
+    english_name: Body 98
+    russian_name: Тело 98
+    mass: 1
+    radius: 1
+    position:
+    - 0.9822872507286887
+    - -0.18738131458572468
+    - 0.0
+    velocity:
+    - 1.327902148230384e-05
+    - 6.961106838778233e-05
+    - 0.0
+  body98:
+    english_name: Body 99
+    russian_name: Тело 99
+    mass: 1
+    radius: 1
+    position:
+    - 0.9921147013144778
+    - -0.12533323356430465
+    - 0.0
+    velocity:
+    - 8.881903217653048e-06
+    - 7.030750350316984e-05
+    - 0.0
+  body99:
+    english_name: Body 100
+    russian_name: Тело 100
+    mass: 1
+    radius: 1
+    position:
+    - 0.9980267284282716
+    - -0.06279051952931326
+    - 0.0
+    velocity:
+    - 4.449732138757719e-06
+    - 7.072646702267336e-05
+    - 0.0

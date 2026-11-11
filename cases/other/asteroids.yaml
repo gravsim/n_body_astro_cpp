@@ -1,0 +1,91 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  end_time: 30_000_000
+  write_period: 1_000
+  enable_3d: False
+  custom_time_step: 0.5
+  draw_every: 5
+
+  calculate_barycenter: False
+  barycenter_reference_frame: False
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+      english_name: One
+      russian_name: Первый
+      mass: 1.989e+21
+      position:
+      - 0.0
+      - 0.0
+      - 0.0
+      velocity:
+      - 0.0
+      - 0.0
+      - 0.0
+  body1:
+      english_name: Two
+      russian_name: Второй
+      mass: 5.97e+19
+      position:
+      - 152000000
+      - 0.0
+      - 0.0
+      velocity:
+      - 0.0
+      - 14
+      - 0.0
+  body2:
+      english_name: Three
+      russian_name: Третий
+      mass: 4.87e+18
+      position:
+      - 108942109
+      - 0.0
+      - 0.0
+      velocity:
+      - 0.0
+      - -14
+      - 0.0
+  body3:
+      english_name: Four
+      russian_name: Четвертый
+      mass: 3.33e+17
+      position:
+      - 57500000
+      - 0.0
+      - 0.0
+      velocity:
+      - -5.0
+      - 12
+      - 0.0
+  body4:
+      english_name: Five
+      russian_name: Пятый
+      mass: 7.35e+18
+      position:
+      - 15238000
+      - 0.0
+      - 0.0
+      velocity:
+      - 0.0
+      - 19
+      - 0.0
+  body5:
+      english_name: Six
+      russian_name: Шестой
+      mass: 7.35e+18
+      position:
+      - -15238000
+      - 0.0
+      - 0.0
+      velocity:
+      - 0.0
+      - -26
+      - 0.0

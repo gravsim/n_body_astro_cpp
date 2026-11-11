@@ -1,0 +1,152 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  enable_3d: false
+  end_time: 100_000_000
+  write_period: 50_000
+  custom_time_step: 100
+  draw_every: 1
+  bodies_number: 10
+  circle_radius: 20
+  body_mass: 1
+  body_radius: 1
+  calculate_barycenter: false
+  barycenter_reference_frame: false
+  calculate_energy: false
+  calculate_da_a_ratio: false
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: 1
+bodies:
+  body0:
+    english_name: Body 1
+    russian_name: Тело 1
+    mass: 1
+    radius: 1
+    position:
+    - 20.0
+    - 0.0
+    - 0.0
+    velocity:
+    - -0.0
+    - 3.589048677537428e-06
+    - 0.0
+  body1:
+    english_name: Body 2
+    russian_name: Тело 2
+    mass: 1
+    radius: 1
+    position:
+    - 16.18033988749895
+    - 11.755705045849464
+    - 0.0
+    velocity:
+    - -2.1095898824163044e-06
+    - 2.90360137376671e-06
+    - 0.0
+  body2:
+    english_name: Body 3
+    russian_name: Тело 3
+    mass: 1
+    radius: 1
+    position:
+    - 6.180339887498949
+    - 19.02113032590307
+    - 0.0
+    velocity:
+    - -3.413388132072474e-06
+    - 1.109077034997996e-06
+    - 0.0
+  body3:
+    english_name: Body 4
+    russian_name: Тело 4
+    mass: 1
+    radius: 1
+    position:
+    - -6.180339887498947
+    - 19.021130325903073
+    - 0.0
+    velocity:
+    - -3.4133881320724746e-06
+    - -1.1090770349979956e-06
+    - 0.0
+  body4:
+    english_name: Body 5
+    russian_name: Тело 5
+    mass: 1
+    radius: 1
+    position:
+    - -16.180339887498945
+    - 11.755705045849465
+    - 0.0
+    velocity:
+    - -2.109589882416305e-06
+    - -2.90360137376671e-06
+    - 0.0
+  body5:
+    english_name: Body 6
+    russian_name: Тело 6
+    mass: 1
+    radius: 1
+    position:
+    - -20.0
+    - 2.4492935982947065e-15
+    - 0.0
+    velocity:
+    - -4.395316974930252e-22
+    - -3.589048677537428e-06
+    - 0.0
+  body6:
+    english_name: Body 7
+    russian_name: Тело 7
+    mass: 1
+    radius: 1
+    position:
+    - -16.18033988749895
+    - -11.75570504584946
+    - 0.0
+    velocity:
+    - 2.109589882416304e-06
+    - -2.90360137376671e-06
+    - 0.0
+  body7:
+    english_name: Body 8
+    russian_name: Тело 8
+    mass: 1
+    radius: 1
+    position:
+    - -6.180339887498951
+    - -19.02113032590307
+    - 0.0
+    velocity:
+    - 3.413388132072474e-06
+    - -1.1090770349979965e-06
+    - 0.0
+  body8:
+    english_name: Body 9
+    russian_name: Тело 9
+    mass: 1
+    radius: 1
+    position:
+    - 6.180339887498945
+    - -19.021130325903073
+    - 0.0
+    velocity:
+    - 3.4133881320724746e-06
+    - 1.1090770349979952e-06
+    - 0.0
+  body9:
+    english_name: Body 10
+    russian_name: Тело 10
+    mass: 1
+    radius: 1
+    position:
+    - 16.180339887498945
+    - -11.755705045849467
+    - 0.0
+    velocity:
+    - 2.109589882416305e-06
+    - 2.90360137376671e-06
+    - 0.0

@@ -1,0 +1,190 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 15_000_000
+  write_period: 1_000
+  custom_time_step: 5
+  draw_every: 20
+  start_date: 2022-01-01 00:00
+  use_gravity_parameters: true
+  location: 500@0
+  config_name: c_2023_a3
+
+  calculate_barycenter: False
+  barycenter_reference_frame: False
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Sun
+    russian_name: Солнце
+    id: 10
+    mass: 1.9885e+30
+    gravity_parameter: 1.3271244004127942e+20
+    position:
+    - -1283674643.550172
+    - 500710499.69506055
+    - 25893975.04295033
+    velocity:
+    - -5.809369653802155
+    - -14.6195957656011
+    - 0.2513455442031695
+  body1:
+    english_name: Mercury
+    russian_name: Меркурий
+    id: 199
+    mass: 3.302e+23
+    gravity_parameter: 22031868551000.0
+    position:
+    - 52426172054.95468
+    - -5596063357.617275
+    - -5398976570.474024
+    velocity:
+    - -3931.719860392732
+    - 50566.139551082444
+    - 4493.726800433638
+  body2:
+    english_name: Venus
+    russian_name: Венера
+    id: 299
+    mass: 4.8685e+24
+    gravity_parameter: 324858592000000.0
+    position:
+    - -11436128896.546202
+    - 107618039155.21399
+    - 2081921801.1921945
+    velocity:
+    - -34989.585325242195
+    - -3509.0115923873673
+    - 1971.0120816626104
+  body3:
+    english_name: Earth
+    russian_name: Земля
+    id: 399
+    mass: 5.97219e+24
+    gravity_parameter: 398600435507000.0
+    position:
+    - -27411475609.01964
+    - 145269749964.61688
+    - 19074993.062935773
+    velocity:
+    - -29818.01522121921
+    - -5415.519940416358
+    - 1.7810369072943653
+  body4:
+    english_name: Moon
+    russian_name: Луна
+    id: 301
+    mass: 7.349e+22
+    gravity_parameter: 4902800118000.0
+    position:
+    - -27503344152.656055
+    - 144922907122.0244
+    - 11076724.20730442
+    velocity:
+    - -28756.97243341938
+    - -5673.12874691156
+    - -93.68517608037942
+  body5:
+    english_name: Mars
+    russian_name: Марс
+    id: 499
+    mass: 6.4171e+23
+    gravity_parameter: 42828375816000.0
+    position:
+    - -130951180011.34462
+    - -189312785216.93115
+    - -771432256.362796
+    velocity:
+    - 20909.94470922251
+    - -11605.03587417347
+    - -755.7181792809785
+  body6:
+    english_name: Jupiter
+    russian_name: Юпитер
+    id: 599
+    mass: 1.89818722e+27
+    gravity_parameter: 1.267127641e+17
+    position:
+    - 695555471349.4442
+    - -267962004096.78912
+    - -14449597699.957476
+    velocity:
+    - 4539.612624165795
+    - 12805.132024302342
+    - -154.71602001830223
+  body7:
+    english_name: Saturn
+    russian_name: Сатурн
+    id: 699
+    mass: 5.6834e+26
+    gravity_parameter: 3.79405848418e+16
+    position:
+    - 1039929082221.6982
+    - -1056650148100.3822
+    - -23030987685.474277
+    velocity:
+    - 6345.150014839904
+    - 6756.117343710411
+    - -370.444719686173
+  body8:
+    english_name: Uranus
+    russian_name: Уран
+    id: 799
+    mass: 8.6813e+25
+    gravity_parameter: 5794556400000000.0
+    position:
+    - 2152569715062.8567
+    - 2016887866855.521
+    - -20396085975.85261
+    velocity:
+    - -4705.854099754362
+    - 4652.143717581365
+    - 78.21618876930825
+  body9:
+    english_name: Neptune
+    russian_name: Нептун
+    id: 899
+    mass: 1.02409e+26
+    gravity_parameter: 6836527100580000.0
+    position:
+    - 4431790029686.979
+    - -611448687802.8783
+    - -89543484564.82632
+    velocity:
+    - 706.6237951457524
+    - 5417.076605926207
+    - -127.13657515591083
+  body10:
+    english_name: Pluto
+    russian_name: Плутон
+    id: 134340
+    mass: 1.303e+22
+    gravity_parameter: 975500000000.0
+    position:
+    - 2261646058326.7124
+    - -4624319273160.524
+    - -159371265706.73328
+    velocity:
+    - 5025.70392811913
+    - 1212.5297282827164
+    - -1601.507928843231
+  body11:
+    english_name: Black hole
+    russian_name: Чёрная дыра
+    mass: 1.9885e+30
+    gravity_parameter: 2.3271244004127942e+20
+    position:
+    - -2.3e+12
+    - 0.3e+11
+    - 25893975.04295033
+    velocity:
+    - 3.0e+05
+    - 0
+    - 0

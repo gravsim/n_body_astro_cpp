@@ -1,0 +1,52 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  enable_3d: false
+  end_time: 20_000_000
+  write_period: 100
+  custom_time_step: 0.2
+  draw_every: 20
+
+  calculate_barycenter: False
+  barycenter_reference_frame: False
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Body0
+    mass: 1
+    position:
+    - -1.0
+    - 0.0
+    - 0.0
+    velocity:
+    - 3.333862011054252e-06
+    - 1.990177050995087e-06
+    - 0.0
+  body1:
+    english_name: Body1
+    mass: 1
+    position:
+    - 1.0
+    - 0.0
+    - 0.0
+    velocity:
+    - 3.333862011054252e-06
+    - 1.990177050995087e-06
+    - 0.0
+  body2:
+    english_name: Body2
+    mass: 1
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    velocity:
+    - -6.667724022108504e-06
+    - -3.980354101990174e-06
+    - 0.0

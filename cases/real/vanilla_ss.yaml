@@ -1,0 +1,177 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 1_576_800_000
+  write_period: 20_000
+  custom_time_step: 50
+  draw_every: 10
+  start_date: 2025-07-01 00:00
+  use_gravity_parameters: true
+  location: 500@0
+  config_name: vanilla_ss
+
+  calculate_barycenter: false
+  barycenter_reference_frame: false
+  calculate_energy: false
+  calculate_da_a_ratio: false
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Sun
+    russian_name: Солнце
+    id: 10
+    mass: 1.9885e+30
+    gravity_parameter: 1.3271244004127942e+20
+    position:
+    - -660686447.3315749
+    - -806098840.3676018
+    - 23476536.71629174
+    velocity:
+    - 12.65981936464301
+    - -3.06471905556915
+    - -0.22872061213128286
+  body1:
+    english_name: Mercury
+    russian_name: Меркурий
+    id: 199
+    mass: 3.302e+23
+    gravity_parameter: 22031868551000.0
+    position:
+    - -52071038282.64292
+    - -42280524325.368614
+    - 1349494907.331938
+    velocity:
+    - 20639.975722644278
+    - -35739.49313609889
+    - -4812.635579799236
+  body2:
+    english_name: Venus
+    russian_name: Венера
+    id: 299
+    mass: 4.8685e+24
+    gravity_parameter: 324858592000000.0
+    position:
+    - 102330303389.55396
+    - -35425400575.802956
+    - -6394742440.663918
+    velocity:
+    - 10983.042481517836
+    - 33038.781104116875
+    - -179.28440512670815
+  body3:
+    english_name: Earth
+    russian_name: Земля
+    id: 399
+    mass: 5.97219e+24
+    gravity_parameter: 398600435507000.0
+    position:
+    - 23347570974.014427
+    - -150984060458.9692
+    - 32263674.09331352
+    velocity:
+    - 28948.003797263085
+    - 4598.61962466774
+    - 0.3997924184746538
+  body4:
+    english_name: Moon
+    russian_name: Луна
+    id: 301
+    mass: 7.349e+22
+    gravity_parameter: 4902800118000.0
+    position:
+    - 22960614048.09602
+    - -150907170254.8887
+    - 33447019.36021448
+    velocity:
+    - 28702.12363285317
+    - 3640.495664298582
+    - -86.86327482735678
+  body5:
+    english_name: Mars
+    russian_name: Марс
+    id: 499
+    mass: 6.4171e+23
+    gravity_parameter: 42828375816000.0
+    position:
+    - -242513828529.16257
+    - -40411903618.31632
+    - 5124309366.246356
+    velocity:
+    - 4832.744849492526
+    - -21842.863027065654
+    - -576.1144717148508
+  body6:
+    english_name: Jupiter
+    russian_name: Юпитер
+    id: 599
+    mass: 1.89818722e+27
+    gravity_parameter: 1.267127641e+17
+    position:
+    - -48400109880.72731
+    - 767400549712.9679
+    - -2099544917.9430003
+    velocity:
+    - -13190.994799733577
+    - -201.8782881392699
+    - 295.9895485810066
+  body7:
+    english_name: Saturn
+    russian_name: Сатурн
+    id: 699
+    mass: 5.6834e+26
+    gravity_parameter: 3.79405848418e+16
+    position:
+    - 1426135795911.7566
+    - -115375257659.7501
+    - -54775875402.236946
+    velocity:
+    - 244.56791002365904
+    - 9608.503840884852
+    - -177.32077116166656
+  body8:
+    english_name: Uranus
+    russian_name: Уран
+    id: 799
+    mass: 8.6813e+25
+    gravity_parameter: 5794556400000000.0
+    position:
+    - 1570710901028.6738
+    - 2460891971803.765
+    - -11209162095.865372
+    velocity:
+    - -5790.44540488984
+    - 3346.4919352208567
+    - 87.67860340136615
+  body9:
+    english_name: Neptune
+    russian_name: Нептун
+    id: 899
+    mass: 1.02409e+26
+    gravity_parameter: 6836527100580000.0
+    position:
+    - 4469560747864.587
+    - -10111940820.588339
+    - -102797295508.20558
+    velocity:
+    - -22.75144605160279
+    - 5467.839784249493
+    - -112.3871561579548
+  body10:
+    english_name: Pluto
+    russian_name: Плутон
+    id: 134340
+    mass: 1.303e+22
+    gravity_parameter: 975500000000.0
+    position:
+    - 2800765634286.877
+    - -4464031911657.442
+    - -332467854525.57837
+    velocity:
+    - 4768.720679502252
+    - 1691.0883936603168
+    - -1571.2949810389298

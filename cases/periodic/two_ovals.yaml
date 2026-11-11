@@ -1,0 +1,55 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  enable_3d: false
+  end_time: 1_000_000
+  write_period: 1_000
+  custom_time_step: 1
+  draw_every: 1
+
+  calculate_barycenter: false
+  barycenter_reference_frame: false
+  calculate_energy: True
+  calculate_da_a_ratio: false
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Body 1
+    russian_name: Тело 1
+    mass: 1
+    position:
+    - 0.486657678894505
+    - 0.755041888583519
+    - 0.0
+    velocity:
+    - -1.4921927047314315e-06
+    - 2.9647319899948208e-06
+    - 0.0
+  body1:
+    english_name: Body 2
+    russian_name: Тело 2
+    mass: 1
+    position:
+    - -0.681737994414464
+    - 0.29366023319721
+    - 0.0
+    velocity:
+    - -4.729308827574947e-06
+    - -6.110207235177728e-06
+    - 0.0
+  body2:
+    english_name: Body 3
+    russian_name: Тело 3
+    mass: 1
+    position:
+    - -0.02259632746864
+    - -0.612645601255358
+    - 0.0
+    velocity:
+    - 6.221501532305178e-06
+    - 3.1454752451840104e-06
+    - 0.0

@@ -1,0 +1,162 @@
+case_settings:
+    integrator: 'billiard' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+    acceleration_model: 'numba' # 'einsum' | 'numexpr' | 'numba' | 'cycles'
+    
+    gravitational_constant: 6.67e-11
+    end_time: 200
+    write_period: 1
+    enable_3d: False
+    custom_time_step: 0.1
+    draw_every: 1
+
+    calculate_barycenter: False
+    barycenter_reference_frame: False
+    calculate_energy: False
+    calculate_da_a_ratio: False
+    softening: 0
+    save_acceleration_matrix: false
+    elasticity: 1
+bodies:
+    body0:
+        english_name: Ball 1
+        russian_name: Шар 1
+        mass: 1
+        radius: 1
+        position:
+        - -20
+        - 0.0
+        - 0.0
+        velocity:
+        - 0.5
+        - 0.05
+        - 0.0
+    body1:
+        english_name: Ball 2
+        russian_name: Шар 2
+        mass: 1
+        radius: 1
+        position:
+        - 0.0
+        - 0.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body2:
+        english_name: Ball 3
+        russian_name: Шар 3
+        mass: 1
+        radius: 1
+        position:
+        - 1.732050808
+        - 1
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body3:
+        english_name: Ball 4
+        russian_name: Шар 4
+        mass: 1
+        radius: 1
+        position:
+        - 1.732050808
+        - -1
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body4:
+        english_name: Ball 5
+        russian_name: Шар 5
+        mass: 1
+        radius: 1
+        position:
+        - 3.464101615
+        - 2.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body5:
+        english_name: Ball 6
+        russian_name: Шар 6
+        mass: 1
+        radius: 1
+        position:
+        - 3.464101615
+        - 0.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body6:
+        english_name: Ball 7
+        russian_name: Шар 7
+        mass: 1
+        radius: 1
+        position:
+        - 3.464101615
+        - -2.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body7:
+        english_name: Ball 8
+        russian_name: Шар 8
+        mass: 1
+        radius: 1
+        position:
+        - 5.196152423
+        - 3.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body8:
+        english_name: Ball 9
+        russian_name: Шар 9
+        mass: 1
+        radius: 1
+        position:
+        - 5.196152423
+        - 1.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body9:
+        english_name: Ball 10
+        russian_name: Шар 10
+        mass: 1
+        radius: 1
+        position:
+        - 5.196152423
+        - -1.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0
+    body10:
+        english_name: Ball 11
+        russian_name: Шар 11
+        mass: 1
+        radius: 1
+        position:
+        - 5.196152423
+        - -3.0
+        - 0.0
+        velocity:
+        - 0.0
+        - 0.0
+        - 0.0

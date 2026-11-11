@@ -1,0 +1,45 @@
+case_settings:
+    integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+    acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+    gravitational_constant: 6.67e-11
+    end_time: 500_000
+    write_period: 100
+    enable_3d: False
+    custom_time_step: 10
+    draw_every: 5
+
+    calculate_barycenter: True
+    barycenter_reference_frame: True
+    calculate_energy: False
+    calculate_da_a_ratio: False
+    softening: 0
+    save_acceleration_matrix: false
+    elasticity: 1
+bodies:
+    body0:
+        english_name: Star 1
+        russian_name: Звезда 1
+        mass: 5.0e+20
+        radius: 8.0e+5
+        position:
+        - -5.0e+6
+        - 0.0
+        - 0.0
+        velocity:
+        - 0
+        - 12
+        - 0.0
+    body1:
+        english_name: Star 2
+        russian_name: Звезда 2
+        mass: 9.0e+19
+        radius: 5.0e+5
+        position:
+        - 5.0e+6
+        - 0.0
+        - 0.0
+        velocity:
+        - 0
+        - 30
+        - 0.0

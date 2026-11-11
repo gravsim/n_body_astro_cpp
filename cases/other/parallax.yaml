@@ -1,0 +1,75 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 200_000_000
+  write_period: 10000
+  custom_time_step: 100
+  draw_every: 10
+  start_date: 2022-01-01 00:00
+
+  calculate_barycenter: False
+  barycenter_reference_frame: False
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Sun
+    mass: 1.9885e+30
+    position:
+    - -1283674643.550172
+    - 500710499.69506055
+    - 25893975.04295033
+    velocity:
+    - -5.809369653802155
+    - -14.6195957656011
+    - 0.2513455442031695
+  body1:
+    english_name: Earth
+    mass: 5.97219e+24
+    position:
+    - -27411475609.01964
+    - 145269749964.61688
+    - 19074993.062935773
+    velocity:
+    - -29818.01522121921
+    - -5415.519940416358
+    - 1.7810369072943653
+  body2:
+    english_name: Body1
+    mass: 1
+    position:
+    - 0
+    - 3.093975e+12
+    - 1.093975e+11
+    velocity:
+    - 0
+    - 0
+    - 0
+  body3:
+    english_name: Body2
+    mass: 1
+    position:
+      - 0
+      - 3.093975e+12
+      - 1.093975e+12
+    velocity:
+      - 0
+      - 0
+      - 0
+  body4:
+    english_name: Body2
+    mass: 1
+    position:
+      - 0
+      - 3.093975e+12
+      - 2.593975e+12
+    velocity:
+      - 0
+      - 0
+      - 0

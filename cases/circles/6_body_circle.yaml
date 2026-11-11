@@ -1,0 +1,94 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.67e-11
+  enable_3d: false
+  end_time: 1_300_000
+  write_period: 50
+  custom_time_step: 1
+  draw_every: 5
+
+  bodies_number: 6
+  radius: 1
+  body_mass: 1
+  calculate_barycenter: false
+  barycenter_reference_frame: false
+  calculate_energy: false
+  calculate_da_a_ratio: false
+  softening: 0.01
+  save_acceleration_matrix: True
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Body 1
+    russian_name: Тело 1
+    mass: 3
+    position:
+    - 1.0
+    - 0.0
+    - 0.0
+    velocity:
+    - -0.0
+    - 1.1040120604184904e-05
+    - 0.0
+  body1:
+    english_name: Body 2
+    russian_name: Тело 2
+    mass: 3
+    position:
+    - 0.5000000000000001
+    - 0.8660254037844386
+    - 0.0
+    velocity:
+    - -9.561024904068132e-06
+    - 5.520060302092453e-06
+    - 0.0
+  body2:
+    english_name: Body 3
+    russian_name: Тело 3
+    mass: 3
+    position:
+    - -0.4999999999999998
+    - 0.8660254037844387
+    - 0.0
+    velocity:
+    - -9.561024904068134e-06
+    - -5.5200603020924495e-06
+    - 0.0
+  body3:
+    english_name: Body 4
+    russian_name: Тело 4
+    mass: 3
+    position:
+    - -1.0
+    - 1.2246467991473532e-16
+    - 0.0
+    velocity:
+    - -1.3520248360115787e-21
+    - -1.1040120604184904e-05
+    - 0.0
+  body4:
+    english_name: Body 5
+    russian_name: Тело 5
+    mass: 3
+    position:
+    - -0.5000000000000004
+    - -0.8660254037844385
+    - 0.0
+    velocity:
+    - 9.56102490406813e-06
+    - -5.520060302092457e-06
+    - 0.0
+  body5:
+    english_name: Body 6
+    russian_name: Тело 6
+    mass: 3
+    position:
+    - 0.5000000000000001
+    - -0.8660254037844386
+    - 0.0
+    velocity:
+    - 9.561024904068132e-06
+    - 5.520060302092453e-06
+    - 0.0

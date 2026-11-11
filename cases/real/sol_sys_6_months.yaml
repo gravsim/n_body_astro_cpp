@@ -1,0 +1,191 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 3_153_600_000
+  write_period: 1000
+  custom_time_step: 100
+  draw_every: 10
+  start_date: 2024-05-18 20:00
+  use_gravity_parameters: true
+  location: 500@0
+  config_name: c_2023_a3_sky
+
+  calculate_barycenter: False
+  barycenter_reference_frame: False
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Sun
+    russian_name: Солнце
+    id: 10
+    mass: 1.9885e+30
+    gravity_parameter: 1.3271244004127942e+20
+    position:
+    - -1080257703.3301988
+    - -570058605.6201816
+    - 30186892.767160054
+    velocity:
+    - 10.230915073853271
+    - -10.290039711157286
+    - -0.13886775866763307
+  body1:
+    english_name: Mercury
+    russian_name: Меркурий
+    id: 199
+    mass: 3.302e+23
+    gravity_parameter: 22031868551000.0
+    position:
+    - 40058570196.06755
+    - -47906950551.13205
+    - -7611624568.291583
+    velocity:
+    - 27095.999750187
+    - 34277.80272114271
+    - 317.5281408619029
+  body2:
+    english_name: Venus
+    russian_name: Венера
+    id: 299
+    mass: 4.8685e+24
+    gravity_parameter: 324858592000000.0
+    position:
+    - 72418542091.63776
+    - 78686109829.25584
+    - -3122281196.761519
+    velocity:
+    - -25774.687274521384
+    - 23652.80451215349
+    - 1812.6526254150813
+  body3:
+    english_name: Earth
+    russian_name: Земля
+    id: 399
+    mass: 5.97219e+24
+    gravity_parameter: 398600435507000.0
+    position:
+    - -81228141945.57104
+    - -128943315708.29439
+    - 37765792.193852365
+    velocity:
+    - 24792.911412248723
+    - -15887.486550396432
+    - 1.6612324183160612
+  body4:
+    english_name: Moon
+    russian_name: Луна
+    id: 301
+    mass: 7.349e+22
+    gravity_parameter: 4902800118000.0
+    position:
+    - -81630921522.44159
+    - -128974282175.45352
+    - 44252629.35066225
+    velocity:
+    - 24879.075011690795
+    - -16850.567931927195
+    - -84.69320962273042
+  body5:
+    english_name: Mars
+    russian_name: Марс
+    id: 499
+    mass: 6.4171e+23
+    gravity_parameter: 42828375816000.0
+    position:
+    - 196339652576.81454
+    - -61795621016.34696
+    - -6095350706.2324705
+    velocity:
+    - 8110.743325420714
+    - 25200.698172615368
+    - 329.52484160602864
+  body6:
+    english_name: Jupiter
+    russian_name: Юпитер
+    id: 599
+    mass: 1.89818722e+27
+    gravity_parameter: 1.267127641e+17
+    position:
+    - 396718457145.9348
+    - 635561195036.3981
+    - -11512309758.377821
+    velocity:
+    - -11228.190792298434
+    - 7538.606794176157
+    - 219.9492538867825
+  body7:
+    english_name: Saturn
+    russian_name: Сатурн
+    id: 699
+    mass: 5.6834e+26
+    gravity_parameter: 3.79405848418e+16
+    position:
+    - 1378220339474.875
+    - -447910280565.0297
+    - -47085753368.142044
+    velocity:
+    - 2445.858782316945
+    - 9166.938376388807
+    - -256.5457071604782
+  body8:
+    english_name: Uranus
+    russian_name: Уран
+    id: 799
+    mass: 8.6813e+25
+    gravity_parameter: 5794556400000000.0
+    position:
+    - 1769497836188.327
+    - 2334869347073.969
+    - -14252441126.921535
+    velocity:
+    - -5477.606865857606
+    - 3795.9418938971858
+    - 85.3637744208049
+  body9:
+    english_name: Neptune
+    russian_name: Нептун
+    id: 899
+    mass: 1.02409e+26
+    gravity_parameter: 6836527100580000.0
+    position:
+    - 4466259244720.078
+    - -202857759717.8098
+    - -98752053160.14494
+    velocity:
+    - 209.9501499321941
+    - 5461.777646897821
+    - -116.83160075958556
+  body10:
+    english_name: Pluto
+    russian_name: Плутон
+    id: 134340
+    mass: 1.303e+22
+    gravity_parameter: 975500000000.0
+    position:
+    - 2631614687589.847
+    - -4520871183308.976
+    - -277458126573.7513
+    velocity:
+    - 4849.134507491151
+    - 1535.0965909959202
+    - -1586.8191764575502
+  body11:
+    english_name: C/2023 A3
+    russian_name: C/2023 A3
+    id: Tsuchinshan-ATLAS
+    mass: 100000000000000.0
+    gravity_parameter: 6670
+    position:
+    - -340837235106.3945
+    - -161829827412.88437
+    - 21787509135.74721
+    velocity:
+    - 18260.206458970923
+    - 17424.261835191985
+    - -8233.165937093854

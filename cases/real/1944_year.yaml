@@ -1,0 +1,188 @@
+case_settings:
+  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
+
+  gravitational_constant: 6.6743e-11
+  enable_3d: true
+  end_time: 2403400000
+  write_period: 100000
+  custom_time_step: 20
+  draw_every: 10
+  start_date: 1944-01-01 00:00
+  use_gravity_parameters: true
+  location: 500@0
+  config_name: 1944_year
+
+  calculate_barycenter: True
+  barycenter_reference_frame: True
+  calculate_energy: False
+  calculate_da_a_ratio: False
+  softening: 0
+  save_acceleration_matrix: false
+  elasticity: -1
+bodies:
+  body0:
+    english_name: Sun
+    russian_name: Солнце
+    id: 10
+    mass: 1.9885e+30
+    radius: 6.955e+08
+    gravity_parameter: 1.3271244004127942e+20
+    position:
+    - 728231771.8311099
+    - -982750452.7491419
+    - -8183029.847900907
+    velocity:
+    - 11.520035944863933
+    - 8.92458176439842
+    - -0.3420527595069385
+  body1:
+    english_name: Mercury
+    russian_name: Меркурий
+    id: 199
+    mass: 3.302e+23
+    radius: 2.4397e+06
+    gravity_parameter: 22031868551000.0
+    position:
+    - 24620792164.322033
+    - 38781778054.83994
+    - 1040798728.7091502
+    velocity:
+    - -51449.766796377095
+    - 27063.215206968696
+    - 6938.488609677813
+  body2:
+    english_name: Venus
+    russian_name: Венера
+    id: 299
+    mass: 4.8685e+24
+    radius: 6.0518e+06
+    gravity_parameter: 324858592000000.0
+    position:
+    - -105604459833.17891
+    - 14519505095.125658
+    - 6343535707.513923
+    velocity:
+    - -5228.253916862435
+    - -34802.29673675194
+    - -168.0414657049152
+  body3:
+    english_name: Earth
+    russian_name: Земля
+    id: 399
+    mass: 5.97219e+24
+    radius: 6.3781e+06
+    gravity_parameter: 398600435507000.0
+    position:
+    - -25428217584.403114
+    - 143772557149.58963
+    - 10130903.50790322
+    velocity:
+    - -29792.398470397966
+    - -5410.175620039362
+    - -0.3811282161276797
+  body4:
+    english_name: Moon
+    russian_name: Луна
+    id: 301
+    mass: 7.349e+22
+    radius:
+    gravity_parameter: 4902800118000.0
+    position:
+    - -25071532348.126774
+    - 143685376955.90857
+    - -10834988.415531816
+    velocity:
+    - -29506.288673638777
+    - -4386.68148199445
+    - -78.60936945780895
+  body5:
+    english_name: Mars
+    russian_name: Марс
+    id: 499
+    mass: 6.4171e+23
+    radius: 3.3972e+06
+    gravity_parameter: 42828375816000.0
+    position:
+    - 13658482885.988552
+    - 232418997396.35156
+    - 4557338955.945507
+    velocity:
+    - -23249.940153681302
+    - 3399.4469100975
+    - 645.1302395134261
+  body6:
+    english_name: Jupiter
+    russian_name: Юпитер
+    id: 599
+    mass: 1.89818722e+27
+    radius: 7.1492e+07
+    gravity_parameter: 1.267127641e+17
+    position:
+    - -607185485449.0947
+    - 517008813982.79626
+    - 11486614893.761488
+    velocity:
+    - -8631.155929984494
+    - -9327.351829022464
+    - 231.6936813732347
+  body7:
+    english_name: Saturn
+    russian_name: Сатурн
+    id: 699
+    mass: 5.6834e+26
+    radius: 6.0268e+07
+    gravity_parameter: 3.79405848418e+16
+    position:
+    - 129659608115.37903
+    - 1344187073817.6943
+    - -28678051922.72288
+    velocity:
+    - -10131.532474138023
+    - 903.2796811613296
+    - 386.1177137014792
+  body8:
+    english_name: Uranus
+    russian_name: Уран
+    id: 799
+    mass: 8.6813e+25
+    radius: 2.5559e+07
+    gravity_parameter: 5794556400000000.0
+    position:
+    - 1086529097619.5116
+    - 2683462053943.9287
+    - -4128470133.9278226
+    velocity:
+    - -6363.877161545821
+    - 2237.849483729525
+    - 90.87203544002165
+  body9:
+    english_name: Neptune
+    russian_name: Нептун
+    id: 899
+    mass: 1.02409e+26
+    radius: 2.4746e+07
+    gravity_parameter: 6836527100580000.0
+    position:
+    - -4518460332840.899
+    - -251351508854.26874
+    - 109269834877.41048
+    velocity:
+    - 271.93707315201243
+    - -5392.41127266679
+    - 105.15914434100449
+  body10:
+    english_name: Pluto
+    russian_name: Плутон
+    id: 134340
+    mass: 1.303e+22
+    radius: 1.1883e+06
+    gravity_parameter: 975500000000.0
+    position:
+    - -3492296365644.898
+    - 4428057148610.081
+    - 536035299998.39276
+    velocity:
+    - -2791.6898989411347
+    - -3891.719109310658
+    - 1244.3791934241026
