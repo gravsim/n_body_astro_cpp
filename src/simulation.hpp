@@ -1,6 +1,5 @@
-#include <iostream>
-#include "vec2.hpp"
-#include "body.cpp"
+#pragma once
+#include "body.hpp"
 
 
 class Simulation {

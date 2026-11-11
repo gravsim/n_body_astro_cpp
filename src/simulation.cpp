@@ -1,8 +1,11 @@
-#include <iostream>
+
 #include "simulation.hpp"
 #include <cmath>
-#include <fstream>
 #include <filesystem>
+#include "vec2.hpp"
+#include "body.hpp"
+#include <fstream>
+#include <iostream>
 
 
 Simulation::Simulation(int N, double G, double end_time, double write_period, double timestep) {

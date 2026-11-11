@@ -1,13 +1,5 @@
-#ifndef VEC2
-#define VEC2
+#pragma once
 #include <iostream>
-
-
-bool double_equal(double a, double b);
-
-
-class Angle;
-
 
 class Vec2
 {
@@ -53,5 +45,3 @@ public:
     explicit operator double() const;
     explicit operator int() const;
 };
-
-#endif

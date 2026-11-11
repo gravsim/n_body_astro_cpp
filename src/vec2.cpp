@@ -29,147 +29,147 @@ int int_sign(double a) {
 }
 
 
-inline Vec2::Vec2() {
+Vec2::Vec2() {
     this->x = 0;
     this->y = 0;
 }
 
 
-inline Vec2::Vec2(double x, double y) {
+Vec2::Vec2(double x, double y) {
     this->x = x;
     this->y = y;
 }
 
 
-inline double Vec2::get_x() const {
+double Vec2::get_x() const {
     return x;
 }
 
 
-inline double Vec2::get_y() const {
+double Vec2::get_y() const {
     return y;
 }
 
 
-inline double Vec2::get_norm() const {
+double Vec2::get_norm() const {
     return sqrt(x * x + y * y);
 }
 
 
-inline double Vec2::get_norm_squared() const {
+double Vec2::get_norm_squared() const {
     return x * x + y * y;
 }
 
 
-inline void Vec2::set_x(double x0) {
+void Vec2::set_x(double x0) {
     this->x = x0;
 }
 
 
-inline void Vec2::set_y(double y0) {
+void Vec2::set_y(double y0) {
     this->y = y0;
 }
 
 
-inline Vec2& Vec2::operator=(const Vec2& vec) {
+Vec2& Vec2::operator=(const Vec2& vec) {
     x = vec.x;
     y = vec.y;
     return *this;
 }
 
 
-inline Vec2 Vec2::operator+(const Vec2& vec) const {
+Vec2 Vec2::operator+(const Vec2& vec) const {
     return Vec2(x + vec.x, y + vec.y);
 }
 
 
-inline Vec2 Vec2::operator-(const Vec2& vec) const {
+Vec2 Vec2::operator-(const Vec2& vec) const {
     return Vec2(x - vec.x, y - vec.y);
 }
 
 
-inline Vec2 Vec2::operator-() const {
+Vec2 Vec2::operator-() const {
     return Vec2(-x, -y);
 }
 
 
-inline Vec2 Vec2::operator*(double coefficient) const {
+Vec2 Vec2::operator*(double coefficient) const {
     return Vec2(x * coefficient, y * coefficient);
 }
 
 
-inline Vec2 operator*(double coefficient, Vec2 vec) {
+Vec2 operator*(double coefficient, Vec2 vec) {
     return vec * coefficient;
 }
 
 
-inline Vec2 Vec2::operator/(double coefficient) const {
+Vec2 Vec2::operator/(double coefficient) const {
     return Vec2(x / coefficient, y / coefficient);
 }
 
 
-inline Vec2& Vec2::operator+=(const Vec2& vec) {
+Vec2& Vec2::operator+=(const Vec2& vec) {
     x += vec.x;
     y += vec.y;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator-=(const Vec2& vec) {
+Vec2& Vec2::operator-=(const Vec2& vec) {
     x -= vec.x;
     y -= vec.y;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator*=(double coefficient) {
+Vec2& Vec2::operator*=(double coefficient) {
     x *= coefficient;
     y *= coefficient;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator/=(double coefficient) {
+Vec2& Vec2::operator/=(double coefficient) {
     x /= coefficient;
     y /= coefficient;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator++() {
+Vec2& Vec2::operator++() {
     x++;
     y++;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator++(int) {
+Vec2& Vec2::operator++(int) {
     x++;
     y++;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator--() {
+Vec2& Vec2::operator--() {
     x--;
     y--;
     return *this;
 }
 
 
-inline Vec2& Vec2::operator--(int) {
+Vec2& Vec2::operator--(int) {
     x--;
     y--;
     return *this;
 }
 
 
-inline bool Vec2::operator==(const Vec2& vec) const {
+bool Vec2::operator==(const Vec2& vec) const {
     return double_equal(x, vec.x) && double_equal(y, vec.y);
 }
 
 
-inline bool Vec2::operator<=(const Vec2& vec) const {
+bool Vec2::operator<=(const Vec2& vec) const {
     if (!double_equal(x, vec.x)) {
         return x <= vec.x;
     }
@@ -180,7 +180,7 @@ inline bool Vec2::operator<=(const Vec2& vec) const {
 }
 
 
-inline bool Vec2::operator>=(const Vec2& vec) const {
+bool Vec2::operator>=(const Vec2& vec) const {
     if (!double_equal(x, vec.x)) {
         return x >= vec.x;
     }
@@ -191,7 +191,7 @@ inline bool Vec2::operator>=(const Vec2& vec) const {
 }
 
 
-inline bool Vec2::operator<(const Vec2& vec) const {
+bool Vec2::operator<(const Vec2& vec) const {
     if (!double_equal(x, vec.x)) {
         return x < vec.x;
     }
@@ -202,7 +202,7 @@ inline bool Vec2::operator<(const Vec2& vec) const {
 }
 
 
-inline bool Vec2::operator>(const Vec2& vec) const {
+bool Vec2::operator>(const Vec2& vec) const {
     if (!double_equal(x, vec.x)) {
         return x > vec.x;
     }
@@ -213,12 +213,12 @@ inline bool Vec2::operator>(const Vec2& vec) const {
 }
 
 
-inline Vec2::operator double() const {
+Vec2::operator double() const {
     return get_norm();
 }
 
 
-inline Vec2::operator int() const {
+Vec2::operator int() const {
     return (int)get_norm();
 }
 
@@ -234,27 +234,27 @@ std::istream& operator>>(std::istream& in, Vec2& vec) {
 }
 
 
-inline Vec2 Vec2::normalized() const {
+Vec2 Vec2::normalized() const {
     return Vec2(x / this->get_norm(), y / this->get_norm());
 }
 
 
-inline double distance(const Vec2& a, const Vec2& b) {
+double distance(const Vec2& a, const Vec2& b) {
     return (a - b).get_norm();
 }
 
 
-inline double cross2(const Vec2& a, const Vec2& b) {
+double cross2(const Vec2& a, const Vec2& b) {
     return a.x * b.y - a.y * b.x;
 }
 
 
-inline double dot(const Vec2& a, const Vec2& b) {
+double dot(const Vec2& a, const Vec2& b) {
     return a.x * b.x + a.y * b.y;
 }
 
 
-inline int vectors_sign(const Vec2& point, const Vec2& start, const Vec2& end) {
+int vectors_sign(const Vec2& point, const Vec2& start, const Vec2& end) {
     Vec2 edge = end - start;
     Vec2 diff = point - start;
     int result = int_sign(cross2(edge, diff));
@@ -262,6 +262,6 @@ inline int vectors_sign(const Vec2& point, const Vec2& start, const Vec2& end) {
 }
 
 
-inline double cos_between(const Vec2& a, const Vec2& b) {
+double cos_between(const Vec2& a, const Vec2& b) {
     return dot(a.normalized(), b.normalized());
 }

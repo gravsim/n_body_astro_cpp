@@ -1,5 +1,7 @@
+#pragma once
 #include <iostream>
 #include "vec2.hpp"
+
 
 class Body {
 private:
@@ -22,3 +24,5 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const Body& body);
     void write_position(std::ofstream& outfile);
 };
+
+Vec2 get_force(double G, Body& body1, Body& body2);
