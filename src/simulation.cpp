@@ -8,7 +8,7 @@
 #include <iostream>
 
 
-Simulation::Simulation(int N, double G, double end_time, double write_period, double timestep) {
+Simulation::Simulation(std::string& config_name, int N, double G, double end_time, double write_period, double timestep) {
     this->N = N;
     this->G = G;
     this->end_time = end_time;
@@ -18,7 +18,7 @@ Simulation::Simulation(int N, double G, double end_time, double write_period, do
     this->write_steps = static_cast<int>(write_period / timestep);
     this->steps = static_cast<int>(end_time / timestep);
     this->bodies = new Body[N];
-    set_directory(&this->outfiles);
+    set_directory(config_name, &this->outfiles);
 }
 
 
@@ -41,19 +41,19 @@ void Simulation::set_body(int body_index, const Body& body) {
 }
 
 
-void Simulation::update_positions() {
+void Simulation::update_positions(double step) {
     for (int i = 0; i < N; i++) {
-        bodies[i].add_position(bodies[i].get_velocity() * timestep);
+        bodies[i].add_position(bodies[i].get_velocity() * step);
     }
 }
 
 
-void Simulation::update_velocities() {
+void Simulation::update_velocities(double step) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < i; j++) {
             Vec2 force = get_force(G, bodies[i], bodies[j]);
-            bodies[i].add_velocity(force * bodies[j].get_mass() * timestep);
-            bodies[j].add_velocity(-force * bodies[i].get_mass() * timestep);
+            bodies[i].add_velocity(force * bodies[j].get_mass() * step);
+            bodies[j].add_velocity(-force * bodies[i].get_mass() * step);
         }
     }
 }
@@ -67,7 +67,7 @@ void Simulation::print_bodies() {
 
 
 
-void Simulation::set_directory(std::ofstream** outfiles_ptr) {
+void Simulation::set_directory(std::string& config_name, std::ofstream** outfiles_ptr) {
     time_t timestamp;
     time(&timestamp);
     tm datetime = *localtime(&timestamp);
@@ -86,14 +86,42 @@ void Simulation::set_directory(std::ofstream** outfiles_ptr) {
 
 
 void Simulation::Euler() {
-    update_velocities();
-    update_positions();
+    update_positions(timestep);
+    update_velocities(timestep);
+}
+
+
+void Simulation::RK2() {
+    for (int i = 0; i < N; i++) {
+        bodies[i].set_pos2(bodies[i].get_position());
+        bodies[i].set_vel2(bodies[i].get_velocity());
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(G, bodies[i].get_pos2(), bodies[j].get_pos2());
+            bodies[i].add_vel2(force * bodies[j].get_mass() * timestep / 2);
+            bodies[j].add_vel2(-force * bodies[i].get_mass() * timestep / 2);
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        bodies[i].set_pos2(bodies[i].get_position() + bodies[i].get_velocity() * timestep / 2);
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(G, bodies[i].get_pos2(), bodies[j].get_pos2());
+            bodies[i].add_velocity(force * bodies[j].get_mass() * timestep);
+            bodies[j].add_velocity(-force * bodies[i].get_mass() * timestep);
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        bodies[i].set_position(bodies[i].get_position() + bodies[i].get_vel2() * timestep);
+    }
 }
 
 
 void Simulation::simulate() {
-    for (int step = 0; step < steps; step ++) {
-        Euler();
+    for (int step = 0; step < steps; step++) {
+        RK2();
         if (step % write_steps == 0) {
             for (int i = 0; i < N; i++) {
                 bodies[i].write_position(outfiles[i]);

@@ -8,7 +8,7 @@ case_settings:
   write_period: 1
   custom_time_step: 1
   draw_every: 1
-  bodies_number: 1_000
+  bodies_number: 1000
   radius: 1
   body_mass: 1
 

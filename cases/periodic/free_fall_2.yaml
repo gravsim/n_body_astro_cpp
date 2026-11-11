@@ -4,10 +4,11 @@ case_settings:
 
   gravitational_constant: 6.67e-11
   enable_3d: false
-  end_time: 500_000
+  end_time: 500000
   write_period: 20
-  custom_time_step: 0.5
+  custom_time_step: 0.2
   draw_every: 40
+  bodies_number: 3
 
   calculate_barycenter: False
   barycenter_reference_frame: False

@@ -33,6 +33,8 @@ add_executable(n_body_astro_cpp
         src/body.cpp
         src/vec2.cpp
         src/simulation.cpp
+        src/methods.hpp
+        src/methods.cpp
 )
 set_target_properties(n_body_astro_cpp PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"

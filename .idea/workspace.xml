@@ -59,14 +59,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfbaa901-8140-43d4-b86b-44eb4f036fd7" name="Changes" comment="#00000010">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/n_body_astro_cpp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/n_body_astro_cpp.iml" afterDir="false" />
+    <list default="true" id="cfbaa901-8140-43d4-b86b-44eb4f036fd7" name="Changes" comment="#00000011">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/circles/30_body_circle.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/circles/30_body_circle.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/circles/3_body_circle.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/circles/3_body_circle.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/periodic/broucke_a1.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/periodic/broucke_a1.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/circles/1000_body_circle.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/circles/1000_body_circle.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/periodic/free_fall_1.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/periodic/free_fall_1.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/periodic/free_fall_2.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cases/periodic/free_fall_2.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/body.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/body.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/body.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/body.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +121,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/manki/CLionProjects/n_body_astro_cpp/CMakeLists.txt&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/manki/n-body-astro-py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -343,6 +347,7 @@
       <workItem from="1794393473417" duration="1145000" />
       <workItem from="1794394876466" duration="7000" />
       <workItem from="1794398205402" duration="1022000" />
+      <workItem from="1794400356213" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="#00000008">
       <option name="closed" value="true" />
@@ -368,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794396980070</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#00000011">
+      <option name="closed" value="true" />
+      <created>1794399526837</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1794399526837</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,6 +396,7 @@
     <MESSAGE value="#00000008" />
     <MESSAGE value="#00000009" />
     <MESSAGE value="#00000010" />
-    <option name="LAST_COMMIT_MESSAGE" value="#00000010" />
+    <MESSAGE value="#00000011" />
+    <option name="LAST_COMMIT_MESSAGE" value="#00000011" />
   </component>
 </project>

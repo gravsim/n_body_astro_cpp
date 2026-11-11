@@ -7,14 +7,19 @@
 
 
 int main() {
-    YAML::Node config = YAML::LoadFile("cases/circles/30_body_circle.yaml");
+    std::string config_name;
+    std::cout << "Enter config_name: ";
+    std::cin >> config_name;
+    std::cout << "Calculating: " << config_name << "\n";
+    YAML::Node config = YAML::LoadFile("cases/" + config_name + ".yaml");
+
     YAML::Node case_settings = config["case_settings"];
     double G = case_settings["gravitational_constant"].as<double>();
     int bodies_number = case_settings["bodies_number"].as<int>();
     double end_time = case_settings["end_time"].as<double>();
     double write_period = case_settings["write_period"].as<double>();
     double timestep = case_settings["custom_time_step"].as<double>();
-    Simulation simulation = Simulation(bodies_number, G, end_time, write_period, timestep);
+    Simulation simulation = Simulation(config_name, bodies_number, G, end_time, write_period, timestep);
     YAML::Node bodies = config["bodies"];
 
     for (int i = 0; i < bodies_number; i++) {
