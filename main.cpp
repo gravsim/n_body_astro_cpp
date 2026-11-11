@@ -8,9 +8,10 @@
 
 
 int main() {
-
     YAML::Node config = YAML::LoadFile("cases/circles/3_body_circle.yaml");
     std::cout << config["bodies"];
+
+
     double G = 6.67e-11;
     int N = 3;
     double end_time = 5000000;

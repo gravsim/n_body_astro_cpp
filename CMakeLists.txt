@@ -16,6 +16,7 @@ set(YAML_BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(YAML_CPP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(YAML_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(YAML_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
+set(YAML_CPP_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
 
 FetchContent_Declare(
         yaml-cpp
@@ -33,7 +34,14 @@ add_executable(n_body_astro_cpp
         src/vec2.cpp
         src/simulation.cpp
 )
-
+set_target_properties(n_body_astro_cpp PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
+)
+target_link_options(n_body_astro_cpp  PRIVATE
+        -static
+        -static-libgcc
+        -static-libstdc++
+)
 target_link_libraries(n_body_astro_cpp
         PRIVATE
         yaml-cpp::yaml-cpp

@@ -14,9 +14,9 @@ Simulation::Simulation(int N, double G, double end_time, double write_period, do
     this->end_time = end_time;
     this->write_period = write_period;
     this->timestep = timestep;
-    this->steps = (int)(end_time / timestep);
-    this->write_steps = (int)(write_period / timestep);
-    this->steps = (int)(end_time / timestep);
+    this->steps = static_cast<int>(end_time / timestep);
+    this->write_steps = static_cast<int>(write_period / timestep);
+    this->steps = static_cast<int>(end_time / timestep);
     this->bodies = new Body[N];
     set_directory(&this->outfiles);
 }
