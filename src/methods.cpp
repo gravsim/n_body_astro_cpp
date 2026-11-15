@@ -80,7 +80,7 @@ Verlet::Verlet(Body* bodies, int N, double timestep): Integrator(bodies, N, time
 
 void Verlet::make_step(double G, Body* bodies) {
     for (int i = 0; i < N; i++) {
-        old_positions[i] = bodies[i].get_position();
+        accelerations[i] = Vec2(0, 0);
     }
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < i; j++) {
@@ -90,7 +90,9 @@ void Verlet::make_step(double G, Body* bodies) {
         }
     }
     for (int i = 0; i < N; i++) {
+        Vec2 current = bodies[i].get_position();
         bodies[i].set_position(2 * bodies[i].get_position() - old_positions[i] + accelerations[i] * timestep * timestep);
+        old_positions[i] = current;
     }
 }
 

@@ -18,7 +18,6 @@ Simulation::Simulation(std::string& config_name, int N, double G, double end_tim
     this->write_steps = static_cast<int>(write_period / timestep);
     this->steps = static_cast<int>(end_time / timestep);
     this->bodies = new Body[N];
-    this->integrator = new Verlet(bodies, N, timestep);
     set_directory(config_name, &this->outfiles);
 }
 
@@ -67,7 +66,7 @@ void Simulation::set_directory(std::string& config_name, std::ofstream** outfile
 }
 
 
-void Simulation::simulate() {
+void Simulation::simulate(Integrator* integrator) {
     for (int step = 0; step < steps; step++) {
         integrator->make_step(G, bodies);
         if (step % write_steps == 0) {

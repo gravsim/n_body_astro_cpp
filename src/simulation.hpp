@@ -13,13 +13,12 @@ private:
     int write_steps;
     Body* bodies;
     std::ofstream* outfiles;
-    Integrator* integrator;
 public:
     Simulation(std::string& config_name, int N, double G, double end_time, double write_period, double timestep);
     ~Simulation();
     Body* get_bodies();
     void set_body(int body_index, const Body& body);
     void set_directory(std::string& config_name, std::ofstream** outfiles);
-    void simulate();
+    void simulate(Integrator* integrator);
     void print_bodies();
 };

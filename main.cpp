@@ -21,7 +21,6 @@ int main() {
     double timestep = case_settings["custom_time_step"].as<double>();
     Simulation simulation = Simulation(config_name, bodies_number, G, end_time, write_period, timestep);
     YAML::Node bodies = config["bodies"];
-
     for (int i = 0; i < bodies_number; i++) {
         YAML::Node body_node = bodies["body" + std::to_string(i)];
         Body body = Body(G,
@@ -30,10 +29,10 @@ int main() {
         Vec2(body_node["velocity"][0].as<double>(), body_node["velocity"][1].as<double>()));
         simulation.set_body(i, body);
     }
-
+    Integrator* integrator = new Verlet(simulation.get_bodies(), bodies_number, timestep);
     std::cout << "Calculation_started.\n";
     auto t1 = std::chrono::high_resolution_clock::now();
-    simulation.simulate();
+    simulation.simulate(integrator);
     auto t2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> ms_double = t2 - t1;
     std::cout << "Calculation time: " << ms_double.count() / 1000 << " sec\n";
