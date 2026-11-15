@@ -9,6 +9,6 @@ Supported methods:
 
 ## Example of different methods: Case: Broucke A 2.yaml
 ### Euler's method:
-![Euler](euler.png "Case: Broucke A 2.yaml")
+![Euler](euler_.png "Case: Broucke A 2.yaml")
 ### Second-order Runge-Kutta method:
 ![RK2](rk2.png "Case: Broucke A 2.yaml")
