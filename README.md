@@ -13,6 +13,6 @@ Supported methods:
 ### Second-order Runge-Kutta method:
 ![RK2](rk2_.png "Case: Broucke A 2.yaml")
 
-Channel with simulations [GravSim](https://t.me/gravsimchannel)
+Telegram channel with simulations [GravSim](https://t.me/gravsimchannel)
 
 Examples of simulations on [YouTube](https://www.youtube.com/@GravSim)
