@@ -19,11 +19,7 @@ Simulation::Simulation(int N, double G, double end_time, double write_period, do
 
 
 Simulation::~Simulation() {
-    for (int i = 0; i < N; i++) {
-        outfiles[i].close();
-    }
     delete[] bodies;
-    delete[] outfiles;
 }
 
 
@@ -44,7 +40,7 @@ void Simulation::print_bodies() {
 }
 
 
-void Simulation::simulate(Integrator* integrator) {
+void Simulation::simulate(Integrator* integrator, std::ofstream* outfiles) {
     for (int step = 0; step < steps; step++) {
         integrator->make_step(G, bodies);
         if (step % write_steps == 0) {

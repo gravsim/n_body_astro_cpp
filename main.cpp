@@ -20,10 +20,23 @@ int main() {
         yaml_reader.get_timestep()
         );
     yaml_reader.set_bodies(simulation);
-    Integrator* integrator = new Verlet(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+
+    Integrator* integrator;
+    if (yaml_reader.get_integrator() == "euler") {
+        integrator = new Euler(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+    } else if (yaml_reader.get_integrator() == "implicit_euler") {
+        integrator = new Implicit_Euler(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+    } else if (yaml_reader.get_integrator() == "RK2") {
+        integrator = new RK2(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+    } else if (yaml_reader.get_integrator() == "verlet") {
+        integrator = new Verlet(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+    } else {
+        integrator = new Euler(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
+    }
+
     std::cout << "Calculation_started.\n";
     auto t1 = std::chrono::high_resolution_clock::now();
-    simulation.simulate(integrator);
+    simulation.simulate(integrator, yaml_reader.get_outfiles());
     auto t2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> ms_double = t2 - t1;
     std::cout << "Calculation time: " << ms_double.count() / 1000 << " sec\n";

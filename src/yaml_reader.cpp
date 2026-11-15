@@ -16,7 +16,9 @@ Yaml_reader::Yaml_reader(std::string& config_name) {
     this->end_time = case_settings["end_time"].as<double>();
     this->write_period = case_settings["write_period"].as<double>();
     this->timestep = case_settings["custom_time_step"].as<double>();
-    set_directory(config_name, &this->outfiles);
+    this->integrator = case_settings["custom_time_step"].as<std::string>();
+    this->outfiles = nullptr;
+    set_directory(config_name);
 }
 
 
@@ -28,7 +30,7 @@ Yaml_reader::~Yaml_reader() {
 }
 
 
-void Yaml_reader::set_directory(std::string& config_name, std::ofstream** outfiles_ptr) {
+void Yaml_reader::set_directory(std::string& config_name) {
     time_t timestamp;
     time(&timestamp);
     tm datetime = *localtime(&timestamp);
@@ -38,10 +40,10 @@ void Yaml_reader::set_directory(std::string& config_name, std::ofstream** outfil
     std::string res = "results/";
     std::string dir_name = res + output;
     std::filesystem::create_directory(dir_name);
-    *outfiles_ptr = new std::ofstream[N];
+    outfiles = new std::ofstream[N];
     for (int i = 0; i < N; i++) {
         std::string output_name = dir_name + "/body" + std::to_string(i) + ".txt";
-        (*outfiles_ptr)[i].open(output_name, std::ios_base::out);
+        outfiles[i].open(output_name, std::ios_base::out);
     }
 }
 
