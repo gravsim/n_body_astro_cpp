@@ -6,24 +6,26 @@
 
 Body::Body() {
     mass = 0;
+    force_parameter = 0;
     position = Vec2();
     velocity = Vec2();
-    pos2 = Vec2();
-    vel2 = Vec2();
 }
 
 
-Body::Body(double new_mass, const Vec2& new_position, const Vec2& new_velocity) {
-    mass = new_mass;
-    position = new_position;
-    velocity = new_velocity;
-    pos2 = Vec2();
-    vel2 = Vec2();
+Body::Body(double mass, const Vec2& position, const Vec2& velocity) {
+    this->mass = mass;
+    this->position = position;
+    this->velocity = velocity;
 }
 
 
 void Body::set_mass(double new_mass) {
     mass = new_mass;
+}
+
+
+void Body::set_force_parameter(double force_parameter) {
+    this->force_parameter = force_parameter;
 }
 
 
@@ -36,20 +38,16 @@ void Body::set_velocity(const Vec2& new_velocity) {
     velocity = new_velocity;
 }
 
-void Body::set_pos2(const Vec2& new_pos2) {
-    pos2 = new_pos2;
-}
-
-
-
-void Body::set_vel2(const Vec2& new_vel2) {
-    vel2 = new_vel2;
-}
-
 
 double Body::get_mass() const {
     return mass;
 }
+
+
+double Body::get_force_parameter() const {
+    return force_parameter;
+}
+
 
 
 Vec2 Body::get_position() const {
@@ -59,16 +57,6 @@ Vec2 Body::get_position() const {
 
 Vec2 Body::get_velocity() const {
     return velocity;
-}
-
-
-Vec2 Body::get_pos2() const {
-    return pos2;
-}
-
-
-Vec2 Body::get_vel2() const {
-    return vel2;
 }
 
 
@@ -82,19 +70,14 @@ void Body::add_velocity(const Vec2& addition_velocity) {
 }
 
 
-void Body::add_vel2(const Vec2& addition_vel2) {
-    vel2 += addition_vel2;
-}
-
-
 Vec2 get_distance(Body& body1, Body& body2) {
     return body2.get_position() - body1.get_position();
 }
 
 
-Vec2 get_force(double G, Body& body1, Body& body2) {
+Vec2 get_force(Body& body1, Body& body2) {
     Vec2 distance = get_distance(body1, body2);
-    return distance.normalized() * G / distance.get_norm_squared();
+    return distance.normalized() / distance.get_norm_squared();
 }
 
 
