@@ -1,13 +1,14 @@
 case_settings:
-  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  integrator: "rk2" # 'euler' | 'body' | 'zero_gravity' | 'billiard'
   acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
 
   gravitational_constant: 6.67e-11
   enable_3d: false
-  end_time: 5_000_000
-  write_period: 1_000
-  custom_time_step: 10
+  end_time: 5000000
+  write_period: 1000
+  custom_time_step: 100
   draw_every: 2
+  bodies_number: 3
 
   calculate_barycenter: False
   barycenter_reference_frame: False
