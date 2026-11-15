@@ -98,7 +98,7 @@ Vec2 Vec2::operator*(double coefficient) const {
 }
 
 
-Vec2 operator*(double coefficient, Vec2 vec) {
+Vec2 operator*(double coefficient, const Vec2& vec) {
     return vec * coefficient;
 }
 

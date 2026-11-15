@@ -45,3 +45,5 @@ public:
     explicit operator double() const;
     explicit operator int() const;
 };
+
+Vec2 operator*(double coefficient, const Vec2& vec);

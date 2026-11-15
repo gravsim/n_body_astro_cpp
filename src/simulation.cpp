@@ -18,7 +18,7 @@ Simulation::Simulation(std::string& config_name, int N, double G, double end_tim
     this->write_steps = static_cast<int>(write_period / timestep);
     this->steps = static_cast<int>(end_time / timestep);
     this->bodies = new Body[N];
-    this->integrator = new RK2(N, timestep);
+    this->integrator = new Verlet(bodies, N, timestep);
     set_directory(config_name, &this->outfiles);
 }
 

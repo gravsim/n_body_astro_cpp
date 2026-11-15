@@ -1,20 +1,17 @@
 
 #include "methods.hpp"
 #include <cmath>
-#include <filesystem>
 #include "vec2.hpp"
 #include "body.hpp"
-#include <fstream>
-#include <iostream>
 
 
-Integrator::Integrator(int N, double timestep) {
+Integrator::Integrator(Body* bodies, int N, double timestep) {
     this->N = N;
     this->timestep = timestep;
 }
 
 
-Euler::Euler(int N, double timestep): Integrator(N, timestep) {}
+Euler::Euler(Body* bodies, int N, double timestep): Integrator(bodies, N, timestep) {}
 
 
 
@@ -33,7 +30,7 @@ void Euler::make_step(double G, Body* bodies) {
 }
 
 
-RK2::RK2(int N, double timestep): Integrator(N, timestep) {
+RK2::RK2(Body* bodies, int N, double timestep): Integrator(bodies, N, timestep) {
     this->half_positions = new Vec2[N];
     this->half_velocities = new Vec2[N];
 }
@@ -72,3 +69,33 @@ RK2::~RK2() {
     delete[] half_velocities;
 }
 
+Verlet::Verlet(Body* bodies, int N, double timestep): Integrator(bodies, N, timestep) {
+    this->old_positions = new Vec2[N];
+    for (int i = 0; i < N; i++) {
+        this->old_positions[i] = bodies[i].get_position() - bodies[i].get_velocity() * timestep;
+    }
+    this->accelerations = new Vec2[N];
+}
+
+
+void Verlet::make_step(double G, Body* bodies) {
+    for (int i = 0; i < N; i++) {
+        old_positions[i] = bodies[i].get_position();
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(bodies[i].get_position(), bodies[j].get_position());
+            accelerations[i] += force * bodies[j].get_force_parameter();
+            accelerations[j] -= force * bodies[i].get_force_parameter();
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        bodies[i].set_position(2 * bodies[i].get_position() - old_positions[i] + accelerations[i] * timestep * timestep);
+    }
+}
+
+
+Verlet::~Verlet() {
+    delete[] old_positions;
+    delete[] accelerations;
+}
