@@ -2,7 +2,7 @@
 #include <fstream>
 #include <chrono>
 #include <iomanip>
-#include "yaml-cpp/yaml.h"
+#include "src/yaml_reader.hpp"
 #include "src/simulation.hpp"
 
 
@@ -11,25 +11,16 @@ int main() {
     std::cout << "Enter config_name: ";
     std::cin >> config_name;
     std::cout << "Calculating: " << config_name << "\n";
-    YAML::Node config = YAML::LoadFile("cases/" + config_name + ".yaml");
-
-    YAML::Node case_settings = config["case_settings"];
-    double G = case_settings["gravitational_constant"].as<double>();
-    int bodies_number = case_settings["bodies_number"].as<int>();
-    double end_time = case_settings["end_time"].as<double>();
-    double write_period = case_settings["write_period"].as<double>();
-    double timestep = case_settings["custom_time_step"].as<double>();
-    Simulation simulation = Simulation(config_name, bodies_number, G, end_time, write_period, timestep);
-    YAML::Node bodies = config["bodies"];
-    for (int i = 0; i < bodies_number; i++) {
-        YAML::Node body_node = bodies["body" + std::to_string(i)];
-        Body body = Body(G,
-            bodies["body" + std::to_string(i)]["mass"].as<double>(),
-        Vec2(body_node["position"][0].as<double>(), body_node["position"][1].as<double>()),
-        Vec2(body_node["velocity"][0].as<double>(), body_node["velocity"][1].as<double>()));
-        simulation.set_body(i, body);
-    }
-    Integrator* integrator = new Verlet(simulation.get_bodies(), bodies_number, timestep);
+    Yaml_reader yaml_reader = Yaml_reader(config_name);
+    Simulation simulation = Simulation(
+        yaml_reader.get_N(),
+        yaml_reader.get_G(),
+        yaml_reader.get_end_time(),
+        yaml_reader.get_write_period(),
+        yaml_reader.get_timestep()
+        );
+    yaml_reader.set_bodies(simulation);
+    Integrator* integrator = new Verlet(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
     std::cout << "Calculation_started.\n";
     auto t1 = std::chrono::high_resolution_clock::now();
     simulation.simulate(integrator);

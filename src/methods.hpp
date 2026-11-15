@@ -14,8 +14,18 @@ public:
 
 
 class Euler: public Integrator {
+protected:
+    Vec2* accelerations;
 public:
     Euler(Body* bodies, int N, double timestep);
+    ~Euler() override;
+    void make_step(double G, Body* bodies) override;
+};
+
+
+class Implicit_Euler: public Integrator {
+public:
+    Implicit_Euler(Body* bodies, int N, double timestep);
     void make_step(double G, Body* bodies) override;
 };
 

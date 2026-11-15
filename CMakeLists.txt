@@ -35,6 +35,7 @@ add_executable(n_body_astro_cpp
         src/simulation.cpp
         src/methods.hpp
         src/methods.cpp
+        src/yaml_reader.cpp
 )
 set_target_properties(n_body_astro_cpp PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
