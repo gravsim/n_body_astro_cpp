@@ -26,7 +26,7 @@ int main() {
         integrator = new Euler(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
     } else if (yaml_reader.get_integrator() == "implicit_euler") {
         integrator = new Implicit_Euler(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
-    } else if (yaml_reader.get_integrator() == "RK2") {
+    } else if (yaml_reader.get_integrator() == "rk2") {
         integrator = new RK2(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
     } else if (yaml_reader.get_integrator() == "verlet") {
         integrator = new Verlet(simulation.get_bodies(), yaml_reader.get_N(), yaml_reader.get_timestep());
@@ -42,5 +42,6 @@ int main() {
     std::cout << "Calculation time: " << ms_double.count() / 1000 << " sec\n";
     std::cout << "Calculation complete. \n";
     system("pause");
+    delete integrator;
     return 0;
 }

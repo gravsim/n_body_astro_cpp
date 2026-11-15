@@ -13,7 +13,7 @@ public:
     Body();
     Body(double G, double mass, const Vec2& position, const Vec2& velocity);
     void set_mass(double new_mass);
-    void set_force_parameter(double force_parameter);
+    void set_force_parameter(double new_force_parameter);
     void set_position(const Vec2& new_position);
     void set_velocity(const Vec2& new_velocity);
 

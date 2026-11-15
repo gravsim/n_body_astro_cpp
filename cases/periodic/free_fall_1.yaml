@@ -1,5 +1,5 @@
 case_settings:
-  integrator: 'euler' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
+  integrator: 'verlet' # 'euler' | 'body' | 'zero_gravity' | 'billiard'
   acceleration_model: 'einsum' # 'einsum' | 'numexpr' | 'cycles'
 
   gravitational_constant: 6.67e-11

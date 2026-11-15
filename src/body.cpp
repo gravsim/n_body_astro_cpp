@@ -25,8 +25,8 @@ void Body::set_mass(double new_mass) {
 }
 
 
-void Body::set_force_parameter(double force_parameter) {
-    this->force_parameter = force_parameter;
+void Body::set_force_parameter(double new_force_parameter) {
+    this->force_parameter = new_force_parameter;
 }
 
 
@@ -96,4 +96,5 @@ std::ostream& operator<<(std::ostream& out, const Body& body) {
 
 void Body::write_position(std::ofstream& outfile) {
     outfile << position.get_x() << " " << position.get_y() << "\n";
+    outfile.flush();
 }

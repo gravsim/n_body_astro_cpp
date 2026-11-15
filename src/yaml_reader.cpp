@@ -16,9 +16,9 @@ Yaml_reader::Yaml_reader(std::string& config_name) {
     this->end_time = case_settings["end_time"].as<double>();
     this->write_period = case_settings["write_period"].as<double>();
     this->timestep = case_settings["custom_time_step"].as<double>();
-    this->integrator = case_settings["custom_time_step"].as<std::string>();
+    this->integrator = case_settings["integrator"].as<std::string>();
     this->outfiles = nullptr;
-    set_directory(config_name);
+    set_directory();
 }
 
 
@@ -30,7 +30,7 @@ Yaml_reader::~Yaml_reader() {
 }
 
 
-void Yaml_reader::set_directory(std::string& config_name) {
+void Yaml_reader::set_directory() {
     time_t timestamp;
     time(&timestamp);
     tm datetime = *localtime(&timestamp);
@@ -47,7 +47,8 @@ void Yaml_reader::set_directory(std::string& config_name) {
     }
 }
 
-void Yaml_reader::set_bodies(Simulation simulation) {
+
+void Yaml_reader::set_bodies(Simulation& simulation) {
     for (int i = 0; i < N; i++) {
         YAML::Node body_node = bodies_config["body" + std::to_string(i)];
         Body body = Body(G,

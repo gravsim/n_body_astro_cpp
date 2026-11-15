@@ -28,8 +28,8 @@ void Euler::make_step(double G, Body* bodies) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < i; j++) {
             Vec2 force = get_force(bodies[i], bodies[j]);
-            accelerations[i] += force * bodies[j].get_force_parameter() * timestep;
-            accelerations[j] -= force * bodies[i].get_force_parameter() * timestep;
+            accelerations[i] += force * bodies[j].get_force_parameter();
+            accelerations[j] -= force * bodies[i].get_force_parameter();
         }
     }
     for (int i = 0; i < N; i++) {
