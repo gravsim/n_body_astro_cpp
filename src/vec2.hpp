@@ -28,10 +28,6 @@ public:
     Vec2& operator-=(const Vec2& vec);
     Vec2& operator*=(double coefficient);
     Vec2& operator/=(double coefficient);
-    Vec2& operator++();
-    Vec2& operator++(int);
-    Vec2& operator--();
-    Vec2& operator--(int);
     bool operator==(const Vec2& vec) const;
     bool operator<=(const Vec2& vec) const;
     bool operator>=(const Vec2& vec) const;

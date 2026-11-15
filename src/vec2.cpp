@@ -136,34 +136,6 @@ Vec2& Vec2::operator/=(double coefficient) {
 }
 
 
-Vec2& Vec2::operator++() {
-    x++;
-    y++;
-    return *this;
-}
-
-
-Vec2& Vec2::operator++(int) {
-    x++;
-    y++;
-    return *this;
-}
-
-
-Vec2& Vec2::operator--() {
-    x--;
-    y--;
-    return *this;
-}
-
-
-Vec2& Vec2::operator--(int) {
-    x--;
-    y--;
-    return *this;
-}
-
-
 bool Vec2::operator==(const Vec2& vec) const {
     return double_equal(x, vec.x) && double_equal(y, vec.y);
 }

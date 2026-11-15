@@ -21,7 +21,7 @@ Euler::~Euler() {
 }
 
 
-void Euler::make_step(double G, Body* bodies) {
+void Euler::make_step(Body* bodies) {
     for (int i = 0; i < N; i++) {
         accelerations[i] = Vec2{0, 0};
     }
@@ -42,17 +42,16 @@ void Euler::make_step(double G, Body* bodies) {
 Implicit_Euler::Implicit_Euler(Body* bodies, int N, double timestep): Integrator(bodies, N, timestep) {}
 
 
-void Implicit_Euler::make_step(double G, Body* bodies) {
-    for (int i = 0; i < N; i++) {
-        bodies[i].add_position(bodies[i].get_velocity() * timestep);
-    }
-
+void Implicit_Euler::make_step(Body* bodies) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < i; j++) {
             Vec2 force = get_force(bodies[i], bodies[j]);
             bodies[i].add_velocity(force * bodies[j].get_force_parameter() * timestep);
             bodies[j].add_velocity(-force * bodies[i].get_force_parameter() * timestep);
         }
+    }
+    for (int i = 0; i < N; i++) {
+        bodies[i].add_position(bodies[i].get_velocity() * timestep);
     }
 }
 
@@ -69,7 +68,7 @@ RK2::~RK2() {
 }
 
 
-void RK2::make_step(double G, Body* bodies) {
+void RK2::make_step(Body* bodies) {
     for (int i = 0; i < N; i++) {
         half_positions[i] = bodies[i].get_position();
         half_velocities[i] = bodies[i].get_velocity();
@@ -99,10 +98,19 @@ void RK2::make_step(double G, Body* bodies) {
 
 Verlet::Verlet(Body* bodies, int N, double timestep): Integrator(bodies, N, timestep) {
     this->old_positions = new Vec2[N];
-    for (int i = 0; i < N; i++) {
-        this->old_positions[i] = bodies[i].get_position() - bodies[i].get_velocity() * timestep;
-    }
     this->accelerations = new Vec2[N];
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(bodies[i].get_position(), bodies[j].get_position());
+            accelerations[i] += force * bodies[j].get_force_parameter();
+            accelerations[j] -= force * bodies[i].get_force_parameter();
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        this->old_positions[i] =
+            bodies[i].get_position() - bodies[i].get_velocity() * timestep
+        + timestep * timestep / 2 * accelerations[i];
+    }
 }
 
 
@@ -112,7 +120,7 @@ Verlet::~Verlet() {
 }
 
 
-void Verlet::make_step(double G, Body* bodies) {
+void Verlet::make_step(Body* bodies) {
     for (int i = 0; i < N; i++) {
         accelerations[i] = Vec2(0, 0);
     }

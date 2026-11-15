@@ -42,7 +42,7 @@ void Simulation::print_bodies() {
 
 void Simulation::simulate(Integrator* integrator, std::ofstream* outfiles) {
     for (int step = 0; step < steps; step++) {
-        integrator->make_step(G, bodies);
+        integrator->make_step(bodies);
         if (step % write_steps == 0) {
             for (int i = 0; i < N; i++) {
                 bodies[i].write_position(outfiles[i]);

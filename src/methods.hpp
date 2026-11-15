@@ -9,7 +9,7 @@ protected:
 public:
     Integrator(Body* bodies, int N, double timestep);
     virtual ~Integrator() = default;
-    virtual void make_step(double G, Body* bodies) = 0;
+    virtual void make_step(Body* bodies) = 0;
 };
 
 
@@ -19,14 +19,14 @@ protected:
 public:
     Euler(Body* bodies, int N, double timestep);
     ~Euler() override;
-    void make_step(double G, Body* bodies) override;
+    void make_step(Body* bodies) override;
 };
 
 
 class Implicit_Euler: public Integrator {
 public:
     Implicit_Euler(Body* bodies, int N, double timestep);
-    void make_step(double G, Body* bodies) override;
+    void make_step(Body* bodies) override;
 };
 
 
@@ -37,7 +37,7 @@ protected:
 public:
     RK2(Body* bodies, int N, double timestep);
     ~RK2() override;
-    void make_step(double G, Body* bodies) override;
+    void make_step(Body* bodies) override;
 };
 
 
@@ -48,5 +48,5 @@ protected:
 public:
     Verlet(Body* bodies, int N, double timestep);
     ~Verlet() override;
-    void make_step(double G, Body* bodies) override;
+    void make_step(Body* bodies) override;
 };
