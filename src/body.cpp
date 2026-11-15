@@ -12,8 +12,9 @@ Body::Body() {
 }
 
 
-Body::Body(double mass, const Vec2& position, const Vec2& velocity) {
+Body::Body(double G, double mass, const Vec2& position, const Vec2& velocity) {
     this->mass = mass;
+    this->force_parameter = G * mass;
     this->position = position;
     this->velocity = velocity;
 }
@@ -81,9 +82,9 @@ Vec2 get_force(Body& body1, Body& body2) {
 }
 
 
-Vec2 get_force_pos(double G, const Vec2& position1, const Vec2& position2) {
+Vec2 get_force_pos(const Vec2& position1, const Vec2& position2) {
     Vec2 distance = position2 - position1;
-    return distance.normalized() * G / distance.get_norm_squared();
+    return distance.normalized() / distance.get_norm_squared();
 }
 
 

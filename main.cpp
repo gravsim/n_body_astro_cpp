@@ -24,7 +24,8 @@ int main() {
 
     for (int i = 0; i < bodies_number; i++) {
         YAML::Node body_node = bodies["body" + std::to_string(i)];
-        Body body = Body(bodies["body" + std::to_string(i)]["mass"].as<double>(),
+        Body body = Body(G,
+            bodies["body" + std::to_string(i)]["mass"].as<double>(),
         Vec2(body_node["position"][0].as<double>(), body_node["position"][1].as<double>()),
         Vec2(body_node["velocity"][0].as<double>(), body_node["velocity"][1].as<double>()));
         simulation.set_body(i, body);

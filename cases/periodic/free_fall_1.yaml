@@ -6,7 +6,7 @@ case_settings:
   enable_3d: false
   end_time: 400000
   write_period: 50
-  custom_time_step: 0.02
+  custom_time_step: 0.01
   draw_every: 16
   bodies_number: 3
 

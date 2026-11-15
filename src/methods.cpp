@@ -18,7 +18,7 @@ Euler::Euler(int N, double timestep): Integrator(N, timestep) {}
 
 
 
-void Euler::make_step(Body* bodies) {
+void Euler::make_step(double G, Body* bodies) {
     for (int i = 0; i < N; i++) {
         bodies[i].add_position(bodies[i].get_velocity() * timestep);
     }
@@ -38,4 +38,37 @@ RK2::RK2(int N, double timestep): Integrator(N, timestep) {
     this->half_velocities = new Vec2[N];
 }
 
+
+void RK2::make_step(double G, Body* bodies) {
+    for (int i = 0; i < N; i++) {
+        half_positions[i] = bodies[i].get_position();
+        half_velocities[i] = bodies[i].get_velocity();
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(half_positions[i], half_positions[j]);
+            half_velocities[i] += force * bodies[j].get_force_parameter() * timestep / 2;
+            half_velocities[j] += -force * bodies[i].get_force_parameter() * timestep / 2;
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        half_positions[i] = bodies[i].get_position() + bodies[i].get_velocity() * timestep / 2;
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < i; j++) {
+            Vec2 force = get_force_pos(half_positions[i], half_positions[j]);
+            bodies[i].add_velocity(force * bodies[j].get_force_parameter() * timestep);
+            bodies[j].add_velocity(-force * bodies[i].get_force_parameter() * timestep);
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        bodies[i].set_position(bodies[i].get_position() + half_velocities[i] * timestep);
+    }
+}
+
+
+RK2::~RK2() {
+    delete[] half_positions;
+    delete[] half_velocities;
+}
 
